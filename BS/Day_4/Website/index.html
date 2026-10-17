@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeCapsule — An Interactive Journey Through Past, Present & Future</title>
+  
+  <!-- Google Fonts: Space Grotesk, Inter, Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. FIXED MODERN NAVBAR
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-xl fixed-top tc-navbar" id="mainNavbar">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand" href="#home">
+        <span class="fs-4">⏳</span> <span class="text-aqua fw-bold">Time</span>Capsule
+      </a>
+
+      <button class="navbar-toggler border-0 text-aqua" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars-staggered fs-4"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-xl-0 gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#past">Past</a></li>
+          <li class="nav-item"><a class="nav-link" href="#present">Present</a></li>
+          <li class="nav-item"><a class="nav-link" href="#developments">Developments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#comparison">Compare</a></li>
+          <li class="nav-item"><a class="nav-link" href="#future">Future</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#capsule">My Capsule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 mt-3 mt-xl-0">
+          <a href="#capsule" class="btn btn-aqua">
+            <i class="fa-solid fa-hourglass-start"></i> Create Capsule
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       2. HOME / HERO SECTION
+       ======================================================================== -->
+  <section id="home">
+    <div class="hero-glow-sphere"></div>
+    <div class="container text-center position-relative z-1 pt-4">
+      
+      <div class="section-badge mx-auto">
+        <i class="fa-solid fa-circle-dot text-aqua"></i> Interactive Digital Chrono-Dashboard
+      </div>
+
+      <h1 class="display-3 fw-bold text-gradient-aqua text-shadow-aqua mt-2 mb-3">
+        TIME CAPSULE
+      </h1>
+
+      <p class="fs-4 text-light fw-medium mb-3">
+        “Remember the Past. Understand the Present. Imagine the Future.”
+      </p>
+
+      <p class="section-subtitle">
+        Explore how humans have lived, worked, communicated and developed through generations — and imagine what tomorrow could bring.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+        <a href="#about" class="btn btn-aqua px-4 py-3 fs-6">
+          <i class="fa-solid fa-compass"></i> Explore Journey
+        </a>
+        <a href="#capsule" class="btn btn-aqua-outline px-4 py-3 fs-6">
+          <i class="fa-solid fa-box-archive"></i> Create My Time Capsule
+        </a>
+      </div>
+
+      <!-- Futuristic Visual: PAST -> PRESENT -> FUTURE -->
+      <div class="journey-visual-wrapper">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-3">
+            <div class="journey-step-card past-node">
+              <div class="stat-icon mx-auto" style="background: rgba(212, 163, 115, 0.15); color: #e5b887; border-color: rgba(212, 163, 115, 0.4);">
+                <i class="fa-solid fa-scroll"></i>
+              </div>
+              <h5 class="fw-bold text-gradient-gold mb-1">PAST</h5>
+              <small class="text-secondary">Parchment & Steam</small>
+              <div class="mt-2 text-xs text-muted">Letters • Telegraphs • Manual Craft</div>
+            </div>
+          </div>
+
+          <div class="col-md-1 d-none d-md-block text-center">
+            <i class="fa-solid fa-arrow-right-long text-aqua fs-3 text-shadow-aqua"></i>
+          </div>
+
+          <div class="col-md-4">
+            <div class="journey-step-card present-node">
+              <div class="stat-icon mx-auto" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+                <i class="fa-solid fa-satellite-dish"></i>
+              </div>
+              <h5 class="fw-bold text-info mb-1">PRESENT</h5>
+              <small class="text-secondary">Hyper-Connected Digital</small>
+              <div class="mt-2 text-xs text-muted">Smartphones • Cloud • Global AI</div>
+            </div>
+          </div>
+
+          <div class="col-md-1 d-none d-md-block text-center">
+            <i class="fa-solid fa-arrow-right-long text-aqua fs-3 text-shadow-aqua"></i>
+          </div>
+
+          <div class="col-md-3">
+            <div class="journey-step-card future-node">
+              <div class="stat-icon mx-auto">
+                <i class="fa-solid fa-atom"></i>
+              </div>
+              <h5 class="fw-bold text-aqua mb-1">FUTURE</h5>
+              <small class="text-secondary">Boundless Horizons</small>
+              <div class="mt-2 text-xs text-muted">Quantum • Smart Cities • Deep Space</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-pulse-line mt-4 d-none d-md-block">
+          <div class="journey-pulse-dot"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. DASHBOARD STATISTICS
+       ======================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="color: #e5b887; background: rgba(212, 163, 115, 0.12); border-color: rgba(212, 163, 115, 0.3);">
+              <i class="fa-solid fa-landmark-dome"></i>
+            </div>
+            <span class="badge text-bg-dark border border-secondary mb-2">ERA: PAST</span>
+            <h3 class="fw-bold text-white mb-1"><span class="counter-num" data-target="100">0</span>+ Years</h3>
+            <p class="text-aqua fw-semibold mb-1">Transformation History</p>
+            <small class="text-secondary">From steam engines and handwritten letters to the dawn of electronic computation.</small>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="color: #38bdf8; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3);">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <span class="badge text-bg-dark border border-secondary mb-2">ERA: PRESENT</span>
+            <h3 class="fw-bold text-white mb-1"><span class="counter-num" data-target="8">0</span>+ Billion</h3>
+            <p class="text-info fw-semibold mb-1">Connected Digital World</p>
+            <small class="text-secondary">Global real-time networks, smart mobile ecosystems, cloud infrastructure & automation.</small>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fa-solid fa-infinity"></i>
+            </div>
+            <span class="badge text-bg-dark border border-secondary mb-2">ERA: FUTURE</span>
+            <h3 class="fw-bold text-white mb-1">Infinite</h3>
+            <p class="text-aqua fw-semibold mb-1">Future Possibilities</p>
+            <small class="text-secondary">Autonomous civilizations, clean fusion energy, neural interfaces, interplanetary habitat.</small>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fa-solid fa-vault"></i>
+            </div>
+            <span class="badge text-bg-dark border border-secondary mb-2">MODULE: VAULT</span>
+            <h3 class="fw-bold text-white mb-1"><span class="counter-num" data-target="1520">0</span>+</h3>
+            <p class="text-aqua fw-semibold mb-1">Your Story for Tomorrow</p>
+            <small class="text-secondary">Digital capsules sealed by users worldwide awaiting future retrieval dates.</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. ABOUT SECTION
+       ======================================================================== -->
+  <section id="about" class="py-5">
+    <div class="container text-center">
+      <div class="section-badge">
+        <i class="fa-solid fa-compass"></i> Mission & Purpose
+      </div>
+      <h2 class="section-title text-white">What is TimeCapsule?</h2>
+      <p class="section-subtitle">
+        TimeCapsule is an interactive digital journey that connects the past, present and future. It helps visitors understand how technology and human lifestyles have changed and encourages them to imagine the possibilities of tomorrow.
+      </p>
+
+      <div class="row g-4 text-start">
+        <div class="col-lg-4">
+          <div class="about-card" style="border-top: 3px solid #d4a373;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon mb-0" style="color: #e5b887; background: rgba(212, 163, 115, 0.15); border-color: rgba(212, 163, 115, 0.35);">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold text-gradient-gold mb-0">Remember</h4>
+                <small class="text-secondary">Historical Foundations</small>
+              </div>
+            </div>
+            <p class="text-slate-300">
+              Explore memories and technologies from previous generations. Understand the patience, physical labor, and ingenuity required to build early civilization tools without electricity or microchips.
+            </p>
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <small class="text-warning"><i class="fa-solid fa-feather me-1"></i> "Those who do not remember the past are condemned to repeat it."</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="about-card" style="border-top: 3px solid #38bdf8;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon mb-0" style="color: #38bdf8; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.35);">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold text-info mb-0">Understand</h4>
+                <small class="text-secondary">Present Velocity</small>
+              </div>
+            </div>
+            <p class="text-slate-300">
+              Discover how today's technology has transformed everyday life. From pocket supercomputers and global fiber optics to digital finance and tele-health, see how interconnected our daily reality is.
+            </p>
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <small class="text-info"><i class="fa-solid fa-wifi me-1"></i> Today, a person with a smartphone holds more access to knowledge than past world leaders.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="about-card" style="border-top: 3px solid var(--aqua-primary);">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="stat-icon mb-0">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div>
+                <h4 class="fw-bold text-aqua mb-0">Imagine</h4>
+                <small class="text-secondary">Tomorrow's Frontiers</small>
+              </div>
+            </div>
+            <p class="text-slate-300">
+              Explore possible future technologies and lifestyles. Anticipate how clean energy, synthetic biology, space architecture, and AI will reshape societal values and daily human existence.
+            </p>
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <small class="text-aqua"><i class="fa-solid fa-rocket me-1"></i> "The best way to predict the future is to create it."</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connected Visual Bar -->
+      <div class="mt-5 p-4 rounded-4 border-aqua-glow text-center" style="background: rgba(7, 18, 32, 0.65);">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <span class="fw-bold text-gradient-gold fs-5">PAST</span>
+            <p class="text-secondary mb-0 small">Foundation & Legacy</p>
+          </div>
+          <div class="col-md-4 my-3 my-md-0">
+            <span class="badge bg-aqua text-dark px-3 py-2 fw-bold text-uppercase">Continuous Flow ➔</span>
+            <p class="fw-bold text-info fs-5 mt-1 mb-0">PRESENT</p>
+            <p class="text-secondary mb-0 small">Integration & Acceleration</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fw-bold text-aqua fs-5">FUTURE</span>
+            <p class="text-secondary mb-0 small">Boundless Evolution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. PAST SECTION
+       ======================================================================== -->
+  <section id="past" class="past-section py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge" style="background: rgba(212, 163, 115, 0.15); color: #d4a373; border-color: rgba(212, 163, 115, 0.4);">
+          <i class="fa-solid fa-scroll"></i> Era of Craft & Heritage
+        </div>
+        <h2 class="section-title text-gradient-gold">Life in the Past</h2>
+        <p class="fs-5 text-warning-emphasis mb-2">“Before the Digital Revolution”</p>
+        <p class="section-subtitle">
+          Before electricity, microprocessors, and instant telecommunications, human existence relied on physical presence, mechanical mastery, patience, and handwritten ink.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Communication -->
+        <div class="col-md-6 col-lg-4">
+          <div class="past-card">
+            <div class="icon-badge"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <h4 class="fw-bold text-light mb-2">Communication</h4>
+            <p class="text-secondary small mb-3">Messages took days or months to reach destinations across borders via courier or wire.</p>
+            <div class="d-flex flex-wrap">
+              <span class="past-item-pill"><i class="fa-solid fa-pen-nib me-1"></i> Letters</span>
+              <span class="past-item-pill"><i class="fa-solid fa-envelope me-1"></i> Postcards</span>
+              <span class="past-item-pill"><i class="fa-solid fa-bolt me-1"></i> Telegrams</span>
+              <span class="past-item-pill"><i class="fa-solid fa-phone-flip me-1"></i> Landline Telephones</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transportation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="past-card">
+            <div class="icon-badge"><i class="fa-solid fa-train-steam"></i></div>
+            <h4 class="fw-bold text-light mb-2">Transportation</h4>
+            <p class="text-secondary small mb-3">Travel was bounded by physical draft animals, steam expansion, and wind-driven sails.</p>
+            <div class="d-flex flex-wrap">
+              <span class="past-item-pill"><i class="fa-solid fa-horse me-1"></i> Bullock Carts</span>
+              <span class="past-item-pill"><i class="fa-solid fa-bicycle me-1"></i> Bicycles</span>
+              <span class="past-item-pill"><i class="fa-solid fa-train me-1"></i> Steam Trains</span>
+              <span class="past-item-pill"><i class="fa-solid fa-ship me-1"></i> Traditional Boats</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="col-md-6 col-lg-4">
+          <div class="past-card">
+            <div class="icon-badge"><i class="fa-solid fa-book-open"></i></div>
+            <h4 class="fw-bold text-light mb-2">Education</h4>
+            <p class="text-secondary small mb-3">Knowledge was physically bounded within ink on parchment, localized chalkboards, and grand libraries.</p>
+            <div class="d-flex flex-wrap">
+              <span class="past-item-pill"><i class="fa-solid fa-chalkboard me-1"></i> Chalk Blackboard</span>
+              <span class="past-item-pill"><i class="fa-solid fa-book me-1"></i> Printed Textbooks</span>
+              <span class="past-item-pill"><i class="fa-solid fa-building-columns me-1"></i> Physical Libraries</span>
+              <span class="past-item-pill"><i class="fa-solid fa-pencil me-1"></i> Handwritten Notes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entertainment -->
+        <div class="col-md-6 col-lg-4">
+          <div class="past-card">
+            <div class="icon-badge"><i class="fa-solid fa-radio"></i></div>
+            <h4 class="fw-bold text-light mb-2">Entertainment</h4>
+            <p class="text-secondary small mb-3">Community gatherings, oral storytelling, acoustic performances, and daily morning newspapers.</p>
+            <div class="d-flex flex-wrap">
+              <span class="past-item-pill"><i class="fa-solid fa-broadcast-tower me-1"></i> Radio</span>
+              <span class="past-item-pill"><i class="fa-solid fa-masks-theater me-1"></i> Live Theatre</span>
+              <span class="past-item-pill"><i class="fa-solid fa-dice me-1"></i> Traditional Games</span>
+              <span class="past-item-pill"><i class="fa-solid fa-newspaper me-1"></i> Newspapers & Magazines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photography -->
+        <div class="col-md-6 col-lg-4">
+          <div class="past-card">
+            <div class="icon-badge"><i class="fa-solid fa-camera-retro"></i></div>
+            <h4 class="fw-bold text-light mb-2">Photography</h4>
+            <p class="text-secondary small mb-3">Chemical exposure on celluloid rolls; each frame was precious and took darkroom days to reveal.</p>
+            <div class="d-flex flex-wrap">
+              <span class="past-item-pill"><i class="fa-solid fa-camera me-1"></i> Film Cameras</span>
+              <span class="past-item-pill"><i class="fa-solid fa-film me-1"></i> Photo Negatives</span>
+              <span class="past-item-pill"><i class="fa-solid fa-image me-1"></i> Printed Photographs</span>
+              <span class="past-item-pill"><i class="fa-solid fa-book-bookmark me-1"></i> Family Albums</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work -->
+        <div class="col-md-6 col-lg-4">
+          <div class="past-card">
+            <div class="icon-badge"><i class="fa-solid fa-keyboard"></i></div>
+            <h4 class="fw-bold text-light mb-2">Work & Office</h4>
+            <p class="text-secondary small mb-3">Every calculation, ledger, and duplicate record required physical paper archives and manual typists.</p>
+            <div class="d-flex flex-wrap">
+              <span class="past-item-pill"><i class="fa-solid fa-file-lines me-1"></i> Manual Records</span>
+              <span class="past-item-pill"><i class="fa-solid fa-folder me-1"></i> Paper Filing Cabinets</span>
+              <span class="past-item-pill"><i class="fa-solid fa-i-cursor me-1"></i> Mechanical Typewriters</span>
+              <span class="past-item-pill"><i class="fa-solid fa-calculator me-1"></i> Manual Calculations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <button class="btn btn-aqua-outline px-4 py-2" data-bs-toggle="modal" data-bs-target="#pastExplorerModal">
+          <i class="fa-solid fa-compass me-2"></i> Explore the Past
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. PRESENT SECTION
+       ======================================================================== -->
+  <section id="present" class="present-section py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+          <i class="fa-solid fa-network-wired"></i> Era of Instant Connectivity
+        </div>
+        <h2 class="section-title text-white">Life Today</h2>
+        <p class="fs-5 text-info mb-2">“The Connected Digital World”</p>
+        <p class="section-subtitle">
+          Modern technology has collapsed global distances into milliseconds. Billions carry high-performance computing in their pockets, seamlessly linking work, knowledge, and lifestyle.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Communication -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h5 class="fw-bold text-white mb-2">Communication</h5>
+            <p class="text-secondary small mb-3">Instantaneous global video, audio, and encrypted messaging in real-time.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">Smartphones</span>
+              <span class="present-item-pill">Messaging Apps</span>
+              <span class="present-item-pill">Video Calls</span>
+              <span class="present-item-pill">Social Media</span>
+              <span class="present-item-pill">Email</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transportation -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-car-side"></i></div>
+            <h5 class="fw-bold text-white mb-2">Transportation</h5>
+            <p class="text-secondary small mb-3">Satellite navigation, electric drives, and algorithmic on-demand rides.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">Electric Vehicles</span>
+              <span class="present-item-pill">GPS Navigation</span>
+              <span class="present-item-pill">Ride-Sharing</span>
+              <span class="present-item-pill">Metro Systems</span>
+              <span class="present-item-pill">Bullet Trains</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-laptop-code"></i></div>
+            <h5 class="fw-bold text-white mb-2">Education</h5>
+            <p class="text-secondary small mb-3">Universal access to knowledge bases, video courses, and adaptive AI tutors.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">Online Classes</span>
+              <span class="present-item-pill">Interactive E-Books</span>
+              <span class="present-item-pill">Digital Classrooms</span>
+              <span class="present-item-pill">Global MOOCs</span>
+              <span class="present-item-pill">AI Tutoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h5 class="fw-bold text-white mb-2">Healthcare</h5>
+            <p class="text-secondary small mb-3">Precision diagnostics, remote biometric tracking, and robotic microsurgery.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">Telemedicine</span>
+              <span class="present-item-pill">Digital Health Records</span>
+              <span class="present-item-pill">Advanced MRI/CT</span>
+              <span class="present-item-pill">Smart Wearables</span>
+              <span class="present-item-pill">Remote Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-briefcase"></i></div>
+            <h5 class="fw-bold text-white mb-2">Work & Industry</h5>
+            <p class="text-secondary small mb-3">Border-free remote employment with real-time distributed collaboration.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">Remote Work</span>
+              <span class="present-item-pill">Cloud SaaS Apps</span>
+              <span class="present-item-pill">Video Meetings</span>
+              <span class="present-item-pill">CI/CD Automation</span>
+              <span class="present-item-pill">Digital Workspaces</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entertainment -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-gamepad"></i></div>
+            <h5 class="fw-bold text-white mb-2">Entertainment</h5>
+            <p class="text-secondary small mb-3">Endless 4K catalogs on demand, cloud multiplayer, and immersive VR headsets.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">4K Streaming</span>
+              <span class="present-item-pill">Cloud Gaming</span>
+              <span class="present-item-pill">Digital Audio</span>
+              <span class="present-item-pill">Creator Economy</span>
+              <span class="present-item-pill">Virtual Reality</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Finance -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-wallet"></i></div>
+            <h5 class="fw-bold text-white mb-2">Finance & Money</h5>
+            <p class="text-secondary small mb-3">Cashless, tokenized transactions processed across continents in seconds.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">Online Banking</span>
+              <span class="present-item-pill">Instant UPI</span>
+              <span class="present-item-pill">Digital Wallets</span>
+              <span class="present-item-pill">NFC Contactless</span>
+              <span class="present-item-pill">Crypto Protocols</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shopping -->
+        <div class="col-md-6 col-lg-3">
+          <div class="present-card">
+            <div class="icon-badge"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h5 class="fw-bold text-white mb-2">Commerce & Delivery</h5>
+            <p class="text-secondary small mb-3">Millions of products delivered directly to doorsteps with algorithmic recommendations.</p>
+            <div class="d-flex flex-wrap">
+              <span class="present-item-pill">E-Commerce Portals</span>
+              <span class="present-item-pill">Same-Day Delivery</span>
+              <span class="present-item-pill">One-Tap Checkout</span>
+              <span class="present-item-pill">Personalized AI Picks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. DEVELOPMENTS SECTION (16 Innovations)
+       ======================================================================== -->
+  <section id="developments" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-lightbulb"></i> Chronological Milestones
+        </div>
+        <h2 class="section-title text-white">Human Developments & Innovations</h2>
+        <p class="section-subtitle">
+          Sixteen transformative leaps that shifted civilization from basic tools to planetary intelligence. Explore each milestone below.
+        </p>
+
+        <!-- Search & Filter Controls -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+          <button class="filter-btn active" data-dev-filter="all">All (16)</button>
+          <button class="filter-btn" data-dev-filter="foundations">Foundational</button>
+          <button class="filter-btn" data-dev-filter="communication">Communications</button>
+          <button class="filter-btn" data-dev-filter="digital">Computing & AI</button>
+          <button class="filter-btn" data-dev-filter="mobility">Mobility & Space</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="devCardsContainer">
+        <!-- 1. Printing Press -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="foundations">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">c. 1440 • Johannes Gutenberg</span>
+              <span class="badge text-bg-secondary">Foundations</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-newspaper text-aqua me-2"></i>Printing Press</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Manual scribing took months per book, limiting knowledge to elites.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Democratized scientific discovery, literacy, and sparked the Enlightenment.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Evolved into open-web digital publishing and instant e-book accessibility.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Neural direct-to-mind knowledge synthesis.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Electricity -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="foundations">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">Late 19th C. • Faraday / Tesla / Edison</span>
+              <span class="badge text-bg-secondary">Foundations</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-bolt text-aqua me-2"></i>Electricity & Grid</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Reliance on sunlight, tallow candles, and localized mechanical steam.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Enabled 24/7 industrial production, public safety, and modern appliances.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Powers all computers, smart grids, servers, and modern medical devices.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Space-based solar beams and clean quantum fusion grids.
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Telephone -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="communication">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1876 • Alexander Graham Bell</span>
+              <span class="badge text-bg-info text-dark">Communication</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-phone text-aqua me-2"></i>Telephone</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Distance separated human voices; telegraphs lacked nuance and emotion.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Permitted immediate conversational exchange across cities and continents.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">High-definition VoIP, FaceTime, and encrypted global voice pipelines.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Holographic telepresence with tactile sensory feedback.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Automobile -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="mobility">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1886 • Karl Benz</span>
+              <span class="badge text-bg-warning text-dark">Mobility</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-car text-aqua me-2"></i>Automobile</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Limited travel range of horses and fixed iron rail tracks.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Gave individuals personal mobility, reshaping city designs and highways.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Connected computers-on-wheels with assisted driving and navigation.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Autonomous flying pods and maglev hyperloop corridors.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Radio -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="communication">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1895 • Guglielmo Marconi</span>
+              <span class="badge text-bg-info text-dark">Communication</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-tower-broadcast text-aqua me-2"></i>Radio</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Need for physical copper wires to convey news or naval distress calls.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Birthed the first real-time broadcast media and maritime safety alerts.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">RF technology underpins Wi-Fi, Bluetooth, LTE, and radar navigation.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Quantum entanglement communication devoid of latency.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Television -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="communication">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1927 • Philo Farnsworth</span>
+              <span class="badge text-bg-info text-dark">Communication</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-tv text-aqua me-2"></i>Television</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Visual events could only be witnessed in person or through static print.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Unified global consciousness through live moon landings, news, and arts.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Ultra HD OLED interactive displays linked to global streaming libraries.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Spatial 3D volumetric light fields projected in mid-air.
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Computer -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="digital">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1940s • Turing / Von Neumann / ENIAC</span>
+              <span class="badge text-bg-primary">Computing</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-desktop text-aqua me-2"></i>Electronic Computer</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Human mental limits in calculating complex mathematical equations.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Automated calculations, enabled space travel, modern physics, and code.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Multi-core processors running trillions of operations every second.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Room-temperature quantum computing solving unsolvable physics.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Internet -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="digital">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1969-1990s • ARPANET / Tim Berners-Lee</span>
+              <span class="badge text-bg-primary">Computing</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-globe text-aqua me-2"></i>The Internet & World Wide Web</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Computers were isolated islands incapable of sharing distributed data.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Interconnected humanity into a single distributed knowledge collective.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">The planetary digital nervous system for commerce, science, and life.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Interplanetary internet protocol linking Mars and Earth outposts.
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Mobile Phone -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="communication">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1973 • Martin Cooper / Motorola</span>
+              <span class="badge text-bg-info text-dark">Communication</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-walkie-talkie text-aqua me-2"></i>Mobile Cellular Phone</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">People had to be at a physical home or office desk to receive calls.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Decoupled human contact from stationary geography forever.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Cellular connectivity blankets almost every populated valley on Earth.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Ambient sub-skin microchips eliminating standalone phones.
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Smartphone -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="digital">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">2007 • Steve Jobs / Modern Smartphones</span>
+              <span class="badge text-bg-primary">Computing</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-mobile-retro text-aqua me-2"></i>Smartphone</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem:</strong> <span class="text-slate-300 small">Communication, web browsing, maps, and cameras were separate clunky gadgets.</span></div>
+            <div class="mb-2"><strong class="text-info small">Development:</strong> <span class="text-slate-300 small">Mobile multi-touch glass combining computing and cellular data.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Used for banking, education, photography, navigation, and identity.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Smart optical contact lenses and contextual ambient AI.
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Cloud Computing -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="digital">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">2000s • AWS / Google Cloud / Azure</span>
+              <span class="badge text-bg-primary">Computing</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-cloud text-aqua me-2"></i>Cloud Computing</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Every business needed expensive on-premise server racks and maintenance.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Democratized elastic, infinite compute on demand for innovators globally.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Powers streaming, enterprise software, data lakes, and generative AI models.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Autonomous planetary edge clouds running on orbital satellites.
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Artificial Intelligence -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="digital">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">2010s-2020s • Neural Nets / LLMs</span>
+              <span class="badge text-bg-primary">Computing</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-brain text-aqua me-2"></i>Artificial Intelligence</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Computers could only follow rigid rule-based if/else instructions.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Machines that learn patterns, compose code, analyze medicine, and reason.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Copilots, drug discovery, automated translation, voice synthesis.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Artificial General Intelligence (AGI) solving grand scientific mysteries.
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Robotics -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="mobility">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">Industrial to Humanoid</span>
+              <span class="badge text-bg-warning text-dark">Mobility</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-robot text-aqua me-2"></i>Advanced Robotics</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Hazardous, repetitive, and micro-precision tasks prone to fatigue.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Assembly automation, robotic surgical arms, warehouse fulfillment.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Bipedal humanoids, robotic rovers on Mars, and automated drones.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Self-replicating robotic builders for off-world construction.
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Electric Vehicles -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="mobility">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">Lithium-ion / Solid State</span>
+              <span class="badge text-bg-warning text-dark">Mobility</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-charging-station text-aqua me-2"></i>Electric Vehicles (EVs)</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Fossil fuel combustion emissions degrading global atmosphere and health.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Zero tailpipe emissions, regenerative braking, digital powertrain efficiency.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Mass adoption of electric cars, buses, bikes, and delivery vans.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Megawatt wireless-charging roadways and electric aviation.
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. Renewable Energy -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="foundations">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">Solar • Wind • Fusion</span>
+              <span class="badge text-bg-secondary">Foundations</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-solar-panel text-aqua me-2"></i>Renewable Clean Energy</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Finite fossil reserve depletion and greenhouse climate devastation.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Harnessing natural energy flux of solar photons and wind currents.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Grid-scale photovoltaic arrays, offshore wind farms, and battery banks.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Commercial net-positive Tokamak fusion reactors.
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. Space Technology -->
+        <div class="col-md-6 col-lg-4 dev-item" data-category="mobility">
+          <div class="dev-card">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="dev-label">1957-Present • Sputnik to Starship</span>
+              <span class="badge text-bg-warning text-dark">Mobility</span>
+            </div>
+            <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-shuttle-space text-aqua me-2"></i>Space Technology</h4>
+            <div class="mb-2"><strong class="text-warning small">Problem Solved:</strong> <span class="text-slate-300 small">Humanity confined to a single fragile planetary biosphere.</span></div>
+            <div class="mb-2"><strong class="text-info small">Impact:</strong> <span class="text-slate-300 small">Satellite communications, GPS, weather forecasting, space science.</span></div>
+            <div class="mb-2"><strong class="text-aqua small">Today:</strong> <span class="text-slate-300 small">Reusable orbital rocketry, James Webb telescope, Artemis lunar program.</span></div>
+            <div class="mt-auto pt-2 border-top border-secondary border-opacity-25 text-xs text-muted">
+              <em>Future:</em> Permanent lunar research stations and Martian colonies.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. THEN VS NOW VS FUTURE (COMPARISON DASHBOARD)
+       ======================================================================== -->
+  <section id="comparison" class="py-5" style="background: rgba(4, 11, 20, 0.75);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-code-compare"></i> Comparative Matrix
+        </div>
+        <h2 class="section-title text-white">Then → Now → Tomorrow</h2>
+        <p class="section-subtitle">
+          Direct side-by-side analysis of how core pillars of human life evolve across three distinct epochs.
+        </p>
+      </div>
+
+      <!-- Domain 1: Communication -->
+      <div class="comparison-card-row">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="fa-solid fa-comments text-aqua fs-5"></i>
+          <h4 class="fw-bold text-white mb-0">1. Communication</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <span class="era-badge-past mb-2 d-inline-block">PAST</span>
+              <h6 class="text-light fw-bold">Letters & Post</h6>
+              <p class="text-secondary small mb-0">Handwritten messages physically carried by postal riders, steam trains, and telegrams over weeks.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <span class="era-badge-present mb-2 d-inline-block">PRESENT</span>
+              <h6 class="text-light fw-bold">Smartphones & Apps</h6>
+              <p class="text-secondary small mb-0">Instant encrypted global video, messaging, and push notifications with one tap from anywhere.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <span class="era-badge-future mb-2 d-inline-block">FUTURE POSSIBILITY</span>
+              <h6 class="text-aqua fw-bold">Immersive Holograms</h6>
+              <p class="text-secondary small mb-0">Spatial volumetric telepresence, thought-assisted translation, and sensory feedback.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain 2: Transportation -->
+      <div class="comparison-card-row">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="fa-solid fa-van-shuttle text-aqua fs-5"></i>
+          <h4 class="fw-bold text-white mb-0">2. Transportation</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <span class="era-badge-past mb-2 d-inline-block">PAST</span>
+              <h6 class="text-light fw-bold">Horse Carts & Steam</h6>
+              <p class="text-secondary small mb-0">Slow travel bounded by animal endurance, coal supply, and unpaved muddy road networks.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <span class="era-badge-present mb-2 d-inline-block">PRESENT</span>
+              <h6 class="text-light fw-bold">Electric & Connected</h6>
+              <p class="text-secondary small mb-0">Quiet electric powertrains, satellite navigation, ride-hailing apps, and high-speed rail.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <span class="era-badge-future mb-2 d-inline-block">FUTURE POSSIBILITY</span>
+              <h6 class="text-aqua fw-bold">Autonomous Sky Corridors</h6>
+              <p class="text-secondary small mb-0">AI-choreographed VTOL sky taxis, vacuum hyperloops, and zero-fatality transit grids.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain 3: Education -->
+      <div class="comparison-card-row">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="fa-solid fa-graduation-cap text-aqua fs-5"></i>
+          <h4 class="fw-bold text-white mb-0">3. Education</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <span class="era-badge-past mb-2 d-inline-block">PAST</span>
+              <h6 class="text-light fw-bold">Blackboards & Memorization</h6>
+              <p class="text-secondary small mb-0">Rigid one-size-fits-all classrooms, chalk slates, and scarcity of physical books.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <span class="era-badge-present mb-2 d-inline-block">PRESENT</span>
+              <h6 class="text-light fw-bold">Online & Digital Learning</h6>
+              <p class="text-secondary small mb-0">Interactive tablets, MOOC certifications, YouTube tutorials, and AI research co-pilots.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <span class="era-badge-future mb-2 d-inline-block">FUTURE POSSIBILITY</span>
+              <h6 class="text-aqua fw-bold">Personalized Immersion</h6>
+              <p class="text-secondary small mb-0">Full-dive VR historical simulations, neuro-adaptive learning paths, and instant skill mastery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain 4: Healthcare -->
+      <div class="comparison-card-row">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="fa-solid fa-notes-medical text-aqua fs-5"></i>
+          <h4 class="fw-bold text-white mb-0">4. Healthcare</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <span class="era-badge-past mb-2 d-inline-block">PAST</span>
+              <h6 class="text-light fw-bold">Limited Diagnostics</h6>
+              <p class="text-secondary small mb-0">Treatment of symptoms after illnesses escalated; rudimentary tools and no genetic analysis.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <span class="era-badge-present mb-2 d-inline-block">PRESENT</span>
+              <h6 class="text-light fw-bold">Digital & Wearable Health</h6>
+              <p class="text-secondary small mb-0">Smartwatches monitoring ECG, robotic minimally invasive surgery, remote consultations.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <span class="era-badge-future mb-2 d-inline-block">FUTURE POSSIBILITY</span>
+              <h6 class="text-aqua fw-bold">Nanobots & Longevity</h6>
+              <p class="text-secondary small mb-0">Sub-cellular repairs by nanomachines, CRISPR gene healing, and extended healthy human lifespan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain 5: Work -->
+      <div class="comparison-card-row">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="fa-solid fa-briefcase text-aqua fs-5"></i>
+          <h4 class="fw-bold text-white mb-0">5. Work & Industry</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <span class="era-badge-past mb-2 d-inline-block">PAST</span>
+              <h6 class="text-light fw-bold">Physical & Paper Files</h6>
+              <p class="text-secondary small mb-0">Hard physical labor in fields or factories, paper registers, and manual file delivery.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <span class="era-badge-present mb-2 d-inline-block">PRESENT</span>
+              <h6 class="text-light fw-bold">Automation & Remote Cloud</h6>
+              <p class="text-secondary small mb-0">Global remote teamwork, cloud repositories, AI assistant tools, and automated pipelines.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <span class="era-badge-future mb-2 d-inline-block">FUTURE POSSIBILITY</span>
+              <h6 class="text-aqua fw-bold">Human-AI Symbiosis</h6>
+              <p class="text-secondary small mb-0">Human imagination partnered with autonomous AI agents managing routine complex operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain 6: Entertainment -->
+      <div class="comparison-card-row">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="fa-solid fa-gamepad text-aqua fs-5"></i>
+          <h4 class="fw-bold text-white mb-0">6. Entertainment</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(212, 163, 115, 0.08); border-left: 3px solid #d4a373;">
+              <span class="era-badge-past mb-2 d-inline-block">PAST</span>
+              <h6 class="text-light fw-bold">Radio & Stage Theatre</h6>
+              <p class="text-secondary small mb-0">Gathering around living room radios or town theatres for scheduled entertainment.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8;">
+              <span class="era-badge-present mb-2 d-inline-block">PRESENT</span>
+              <h6 class="text-light fw-bold">Streaming & Online Gaming</h6>
+              <p class="text-secondary small mb-0">On-demand movies, multiplayer metaverse worlds, and endless streaming music on mobile.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.08); border-left: 3px solid var(--aqua-primary);">
+              <span class="era-badge-future mb-2 d-inline-block">FUTURE POSSIBILITY</span>
+              <h6 class="text-aqua fw-bold">Neural Immersion</h6>
+              <p class="text-secondary small mb-0">Direct sensory world building, adaptive procedural storylines, and holodeck realities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. FUTURE SECTION (2030, 2050, 2100)
+       ======================================================================== -->
+  <section id="future" class="future-section py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="section-badge">
+          <i class="fa-solid fa-atom"></i> Horizons of Tomorrow
+        </div>
+        <h2 class="section-title text-white">The Future</h2>
+        <p class="fs-5 text-aqua mb-2">“What Could Tomorrow Look Like?”</p>
+        <p class="section-subtitle">
+          Peer ahead into the next decades and centuries as human curiosity, scientific breakthroughs, and AI reshape our species.
+        </p>
+
+        <!-- Required Speculative Disclaimer -->
+        <div class="speculative-disclaimer mb-5">
+          <i class="fa-solid fa-triangle-exclamation text-aqua fs-5"></i>
+          <span><strong>Notice:</strong> Future scenarios shown here are possibilities, not guaranteed predictions.</span>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- 2030 -->
+        <div class="col-lg-4">
+          <div class="future-glass-card">
+            <div class="year-glow-tag text-aqua">2030</div>
+            <h4 class="fw-bold text-white mb-3">Near-Term Convergence</h4>
+            <p class="text-secondary small mb-4">Deep integration of AI copilots into daily domestic and civic life.</p>
+            
+            <ul class="list-unstyled d-flex flex-column gap-3 text-slate-300">
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-robot text-aqua"></i>
+                <span><strong>AI Assistants:</strong> Hyper-personalized agents running daily logistics and scheduling.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-house-signal text-aqua"></i>
+                <span><strong>Smart Homes:</strong> Automated zero-waste climate, energy, and security control.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-bolt-lightning text-aqua"></i>
+                <span><strong>Electric Transportation:</strong> High-density batteries and autonomous delivery vans.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-brain text-aqua"></i>
+                <span><strong>Digital Education:</strong> AI-driven personalized curriculum for every child.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-dna text-aqua"></i>
+                <span><strong>Advanced Healthcare:</strong> Early predictive biomarker tracking via wearable rings.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-sun text-aqua"></i>
+                <span><strong>Renewable Energy:</strong> Clean solar and wind surpassing fossil generation in major grids.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2050 -->
+        <div class="col-lg-4">
+          <div class="future-glass-card" style="border-color: rgba(56, 189, 248, 0.6); box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);">
+            <div class="year-glow-tag text-info">2050</div>
+            <h4 class="fw-bold text-white mb-3">Planetary Automation</h4>
+            <p class="text-secondary small mb-4">Autonomous infrastructure and synthetic biology redefine human lifestyle.</p>
+            
+            <ul class="list-unstyled d-flex flex-column gap-3 text-slate-300">
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-city text-info"></i>
+                <span><strong>Smart Cities:</strong> Carbon-negative vertical biophilic architectures.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-microchip text-info"></i>
+                <span><strong>Advanced Robotics:</strong> General-purpose humanoids assisting in care and construction.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-plane-up text-info"></i>
+                <span><strong>Autonomous Transit:</strong> Driverless fleets virtually eliminating road accidents.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-atom text-info"></i>
+                <span><strong>Advanced Energy Systems:</strong> Commercial nuclear fusion providing abundant clean power.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-vial-circle-check text-info"></i>
+                <span><strong>Personalized Medicine:</strong> Gene therapies custom-tailored to patient DNA.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-satellite text-info"></i>
+                <span><strong>Space Technology:</strong> Permanent lunar bases and orbital manufacturing hubs.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2100 -->
+        <div class="col-lg-4">
+          <div class="future-glass-card" style="border-color: var(--aqua-primary); box-shadow: 0 0 35px var(--aqua-glow);">
+            <div class="year-glow-tag text-aqua">2100</div>
+            <h4 class="fw-bold text-white mb-3">Speculative Horizons</h4>
+            <p class="text-secondary small mb-4">Interplanetary presence and post-scarcity computational civilization.</p>
+            
+            <ul class="list-unstyled d-flex flex-column gap-3 text-slate-300">
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-building-circle-arrow-right text-aqua"></i>
+                <span><strong>Future Cities:</strong> Megastructures integrated with atmospheric carbon scrubbers.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-globe text-aqua"></i>
+                <span><strong>Space Habitats:</strong> Self-sustaining orbital O'Neill cylinders and Martian colonies.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-gears text-aqua"></i>
+                <span><strong>Advanced Robotics:</strong> Self-assembling nanotech manufacturing matter on demand.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-network-wired text-aqua"></i>
+                <span><strong>Neural HCI:</strong> Direct brain-computer interfaces with ambient cloud knowledge.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-sun-plant-wilt text-aqua"></i>
+                <span><strong>New Energy:</strong> Dyson swarm collector collectors harvesting raw solar output.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <i class="fa-solid fa-shuttle-space text-aqua"></i>
+                <span><strong>Interstellar Probes:</strong> Antimatter / light-sail spacecraft exploring Alpha Centauri.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. WHAT WE DO TODAY (12 CARDS: PAST -> PRESENT -> FUTURE)
+       ======================================================================== -->
+  <section id="what-we-do" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-layer-group"></i> Daily Human Evolution
+        </div>
+        <h2 class="section-title text-white">What Are We Doing Today?</h2>
+        <p class="section-subtitle">
+          Observe how twelve fundamental human activities transformed from past traditions into modern digital habits, and where they might evolve tomorrow.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Learning -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-book-open-reader text-aqua me-2"></i>1. Learning</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Physical rote textbooks & slate boards</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Online courses, interactive tabs, AI tutors</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Holographic full-dive knowledge immersion</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Working -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-laptop text-aqua me-2"></i>2. Working</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Factory whistles & handwritten ledgers</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Global remote work & SaaS collaboration</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Autonomous agent networks & human-AI co-creation</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Communicating -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-paper-plane text-aqua me-2"></i>3. Communicating</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Postal mail taking weeks to arrive</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Instant encrypted messaging & group video</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Direct spatial holographic presence</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Travelling -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-plane-departure text-aqua me-2"></i>4. Travelling</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Bullock carts & steam ocean liners</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> High-speed rail, GPS routing, electric vehicles</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Supersonic sub-orbital flight & vacuum tubes</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Shopping -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-basket-shopping text-aqua me-2"></i>5. Shopping</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Village bazaars & cash barter trade</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> 1-click e-commerce with door-step delivery</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Drone air delivery & instant atomic 3D printing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Banking -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-credit-card text-aqua me-2"></i>6. Banking</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Paper passbooks, coin vaults, physical queues</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> UPI, mobile banking apps, contactless tap</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Decentralized automated smart-contract wealth</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Creating Content -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-wand-magic text-aqua me-2"></i>7. Creating Content</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Printing presses & darkroom photo developing</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> 4K smartphone cameras, social feeds, YouTube</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> AI text-to-world procedural film generators</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Using AI -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-brain text-aqua me-2"></i>8. Using AI</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Human calculations on paper tables</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Chatbots, predictive search, image synthesis</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Sentient research assistants discovering new physics</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Healthcare -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-heart-pulse text-aqua me-2"></i>9. Healthcare</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Basic stethoscopes & handwritten medical charts</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Telehealth, MRI scanning, smart fitness bands</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Microscopic nanobots repairing cellular DNA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Entertainment -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-film text-aqua me-2"></i>10. Entertainment</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Community shadow puppet shows & gramophones</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> On-demand 4K streaming & multiplayer gaming</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Interactive neural consciousness adventures</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Social Networking -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-users text-aqua me-2"></i>11. Social Networking</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Village gatherings, town squares, letter clubs</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Global feeds, stories, reels, messaging circles</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Shared spatial reality lounges & digital twin spaces</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Environmental Activities -->
+        <div class="col-md-6 col-lg-4">
+          <div class="activity-card">
+            <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-leaf text-aqua me-2"></i>12. Environmental Care</h5>
+            <div class="activity-flow">
+              <div class="flow-step flow-past"><strong class="me-1">Past:</strong> Unaware resource consumption & coal burning</div>
+              <div class="flow-step flow-current"><strong class="me-1">Today:</strong> Solar adoption, EV mandates, recycling telemetry</div>
+              <div class="flow-step flow-future"><strong class="me-1">Future:</strong> Planetary geo-engineering & closed-loop bio-economy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. TECHNOLOGY IMPACT SECTION
+       ======================================================================== -->
+  <section id="impact" class="py-5" style="background: rgba(6, 17, 30, 0.7);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-chart-line"></i> Societal Metrics
+        </div>
+        <h2 class="section-title text-white">How Technology Changed Our Lives</h2>
+        <p class="section-subtitle">
+          Witness the quantitative transformation across eight foundational vectors of the modern human experience.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-satellite text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Communication</h5>
+            <p class="text-secondary small mb-2">From letters taking weeks to instant sub-second global connections.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Velocity Leap</span>
+              <span>99.9% Faster</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 98%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-book-atlas text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Education</h5>
+            <p class="text-secondary small mb-2">From scarce physical textbooks to instant planetary open knowledge.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Access Index</span>
+              <span>94% Universal</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 92%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-heart-pulse text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Healthcare</h5>
+            <p class="text-secondary small mb-2">From basic records to advanced genomic imaging & robotic procedures.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Life Expectancy</span>
+              <span>Doubled (1900-2026)</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-car-battery text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Transportation</h5>
+            <p class="text-secondary small mb-2">From animal draft carts to electric cars and commercial airlines.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Transit Radius</span>
+              <span>200x Range</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 90%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-coins text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Banking</h5>
+            <p class="text-secondary small mb-2">From heavy physical cash & vaults to 24/7 one-touch digital payments.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Frictionless Trade</span>
+              <span>96% Digital</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 95%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-truck-fast text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Shopping</h5>
+            <p class="text-secondary small mb-2">From localized market trips to global e-commerce and door-step courier.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Catalog Diversity</span>
+              <span>Unlimited</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 94%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-laptop-file text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Work & Industry</h5>
+            <p class="text-secondary small mb-2">From manual physical processes to cloud automation and remote teams.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Productivity Ratio</span>
+              <span>15x Multiplier</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 86%;"></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="impact-card">
+            <i class="fa-solid fa-vr-cardboard text-aqua fs-3 mb-2"></i>
+            <h5 class="fw-bold text-white mb-1">Entertainment</h5>
+            <p class="text-secondary small mb-2">From scheduled radio broadcasts to infinite personalized streaming & VR.</p>
+            <div class="d-flex justify-content-between text-xs text-aqua fw-bold mb-1">
+              <span>Immersive Depth</span>
+              <span>4K / Spatial 3D</span>
+            </div>
+            <div class="impact-meter"><div class="impact-meter-fill" style="width: 93%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       12. TIMELINE SECTION
+       ======================================================================== -->
+  <section id="timeline" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="section-badge">
+          <i class="fa-solid fa-timeline"></i> The Great Progression
+        </div>
+        <h2 class="section-title text-white">Human Progress Timeline</h2>
+        <p class="section-subtitle">
+          Click any era node to explore technology, lifestyle, communication, transportation, education, and major breakthroughs.
+        </p>
+      </div>
+
+      <!-- Desktop Horizontal Timeline Rail -->
+      <div class="timeline-horizontal-nav" id="timelineDesktopNav">
+        <button class="timeline-node-btn" data-year="1800">1800</button>
+        <button class="timeline-node-btn" data-year="1900">1900</button>
+        <button class="timeline-node-btn" data-year="1950">1950</button>
+        <button class="timeline-node-btn" data-year="1980">1980</button>
+        <button class="timeline-node-btn" data-year="2000">2000</button>
+        <button class="timeline-node-btn" data-year="2010">2010</button>
+        <button class="timeline-node-btn" data-year="2020">2020</button>
+        <button class="timeline-node-btn active" data-year="TODAY">TODAY</button>
+        <button class="timeline-node-btn" data-year="2030">2030</button>
+        <button class="timeline-node-btn" data-year="2050">2050</button>
+        <button class="timeline-node-btn" data-year="2100">2100</button>
+      </div>
+
+      <!-- Active Timeline Details Display Card -->
+      <div class="timeline-content-card" id="timelineDisplayBox">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+          <div>
+            <span class="badge bg-aqua text-dark fw-bold px-3 py-1 mb-2" id="tlEraBadge">PRESENT ERA</span>
+            <h3 class="fw-bold text-white mb-0" id="tlEraTitle">TODAY — Connected Digital Society</h3>
+          </div>
+          <div class="text-secondary small" id="tlTimeSpan">2026 • Real-Time Information Age</div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-glass);">
+              <h6 class="text-aqua fw-bold"><i class="fa-solid fa-microchip me-2"></i>Technology</h6>
+              <p class="text-slate-300 small mb-0" id="tlTech">Everyday smartphones, hyper-scale cloud servers, generative AI copilots, 5G wireless networks, and robotics.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-glass);">
+              <h6 class="text-aqua fw-bold"><i class="fa-solid fa-house-user me-2"></i>Lifestyle & Work</h6>
+              <p class="text-slate-300 small mb-0" id="tlLifestyle">Global hybrid/remote employment, cashless payments via UPI, on-demand streaming, algorithmic food & parcel delivery.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-glass);">
+              <h6 class="text-aqua fw-bold"><i class="fa-solid fa-tower-broadcast me-2"></i>Communication</h6>
+              <p class="text-slate-300 small mb-0" id="tlComm">Encrypted instant video & text messaging globally, interactive social feeds, AI speech translation.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-glass);">
+              <h6 class="text-aqua fw-bold"><i class="fa-solid fa-car me-2"></i>Transportation</h6>
+              <p class="text-slate-300 small mb-0" id="tlTransit">Electric vehicles, algorithmic ride-sharing, bullet trains, global commercial flight fleets.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-glass);">
+              <h6 class="text-aqua fw-bold"><i class="fa-solid fa-graduation-cap me-2"></i>Education</h6>
+              <p class="text-slate-300 small mb-0" id="tlEdu">Digital classrooms, personalized adaptive learning algorithms, online degrees, open research repos.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.05); border: 1px solid var(--border-glass);">
+              <h6 class="text-aqua fw-bold"><i class="fa-solid fa-star me-2"></i>Major Shift</h6>
+              <p class="text-slate-300 small mb-0" id="tlMajor">Information friction dropped to near zero, linking 8+ billion people into a single real-time network.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Fallback Vertical Timeline Stream -->
+      <div class="timeline-mobile-stream mt-4" style="display: none;">
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-warning mb-1">1800</span>
+          <h5 class="text-white fw-bold">Traditional Life</h5>
+          <p class="text-secondary small">Horse carriages, handwritten post, wood/coal warmth, localized village living.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-warning mb-1">1900</span>
+          <h5 class="text-white fw-bold">Industrial Development</h5>
+          <p class="text-secondary small">Steam power, early electrical grids, telegraph lines, factory manufacturing.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-info text-dark mb-1">1950</span>
+          <h5 class="text-white fw-bold">Mass Communication</h5>
+          <p class="text-secondary small">Radio, black & white television, commercial aviation, early mainframe computers.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-info text-dark mb-1">1980</span>
+          <h5 class="text-white fw-bold">Personal Computers</h5>
+          <p class="text-secondary small">Home microcomputers (Apple/IBM), cassette tapes, early cellular bricks.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-primary mb-1">2000</span>
+          <h5 class="text-white fw-bold">Internet Expansion</h5>
+          <p class="text-secondary small">Dial-up to broadband, dot-com boom, early digital cameras, email adoption.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-primary mb-1">2010</span>
+          <h5 class="text-white fw-bold">Smartphones & Social Media</h5>
+          <p class="text-secondary small">Touchscreen phones, 3G/4G, ubiquitous apps, social networking revolution.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-primary mb-1">2020</span>
+          <h5 class="text-white fw-bold">AI & Cloud Transformation</h5>
+          <p class="text-secondary small">Remote work explosion, large language models, cloud infrastructure, EV surge.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge bg-aqua text-dark mb-1">TODAY</span>
+          <h5 class="text-white fw-bold">Connected Digital Society</h5>
+          <p class="text-secondary small">High-speed global connectivity, AI copilots, renewable power transition.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-info mb-1">2030</span>
+          <h5 class="text-white fw-bold">Possible Near-Term Developments</h5>
+          <p class="text-secondary small">Smart home automation, advanced AI assistance, commercial EV dominance.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge text-bg-info mb-1">2050</span>
+          <h5 class="text-white fw-bold">Possible Advanced Technologies</h5>
+          <p class="text-secondary small">Smart autonomous cities, clean fusion, robotics integration, space hubs.</p>
+        </div>
+        <div class="timeline-stream-item">
+          <span class="badge bg-aqua text-dark mb-1">2100</span>
+          <h5 class="text-white fw-bold">Speculative Future</h5>
+          <p class="text-secondary small">Interplanetary outposts, space habitats, human-computer neural harmony.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       13. FUTURE PREDICTION SECTION
+       ======================================================================== -->
+  <section id="predictions" class="py-5" style="background: rgba(4, 12, 22, 0.85);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-crystal-ball"></i> Collective Foreknowledge
+        </div>
+        <h2 class="section-title text-white">Predict the Future</h2>
+        <p class="fs-5 text-aqua mb-2">What do you think the world will look like in 2050?</p>
+        <p class="section-subtitle">
+          Record your vision for our planet in the middle of the 21st century. Your input will be preserved directly inside the digital TimeCapsule archive.
+        </p>
+      </div>
+
+      <form id="futurePredictionForm">
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-car-tunnel me-1"></i> Future Transportation</label>
+              <input type="text" id="predTransport" placeholder="e.g. Flying autonomous pods, Hyperloops" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-graduation-cap me-1"></i> Future Education</label>
+              <input type="text" id="predEducation" placeholder="e.g. Neuro-interactive holographic classrooms" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-dna me-1"></i> Future Healthcare</label>
+              <input type="text" id="predHealth" placeholder="e.g. Nanobots curing illnesses before symptoms" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-tower-cell me-1"></i> Future Communication</label>
+              <input type="text" id="predComm" placeholder="e.g. Mind-to-mind telepathy protocols" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-briefcase me-1"></i> Future Work</label>
+              <input type="text" id="predWork" placeholder="e.g. Creative philosophy and robotic curation" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-city me-1"></i> Future Cities</label>
+              <input type="text" id="predCities" placeholder="e.g. Floating ocean eco-cities & vertical forest towers" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-gamepad me-1"></i> Future Entertainment</label>
+              <input type="text" id="predEntertainment" placeholder="e.g. Full-sensory simulated realities" required />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="predict-input-card">
+              <label class="form-label text-aqua small fw-bold"><i class="fa-solid fa-atom me-1"></i> Future Technology</label>
+              <input type="text" id="predTech" placeholder="e.g. Commercial fusion & planetary terraforming" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-aqua px-5 py-3 fs-6">
+            <i class="fa-solid fa-paper-plane me-2"></i> Submit My Prediction
+          </button>
+        </div>
+      </form>
+
+      <!-- Prediction Confirmation Feedback -->
+      <div id="predAlertBox" class="alert alert-success d-none mt-4 text-center border-aqua-glow" style="background: rgba(6, 44, 52, 0.85); color: var(--aqua-primary);">
+        <i class="fa-solid fa-circle-check fs-4 me-2 align-middle"></i>
+        <strong>“Your prediction has been added to the TimeCapsule.”</strong>
+      </div>
+
+      <!-- Dynamic Recent Predictions Wall -->
+      <div class="mt-5">
+        <h5 class="fw-bold text-white mb-3 text-center"><i class="fa-solid fa-users-rays text-aqua me-2"></i>Live Community Predictions</h5>
+        <div class="row g-3" id="livePredictionsStream">
+          <!-- Populated dynamically via script.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       14. GALLERY SECTION (PAST, PRESENT, FUTURE + MODALS)
+       ======================================================================== -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-images"></i> Visual Exhibition
+        </div>
+        <h2 class="section-title text-white">Past • Present • Future Gallery</h2>
+        <p class="section-subtitle">
+          An interactive visual museum capturing the aesthetic, tools, and visions across three human eras. Click any artifact to view its story.
+        </p>
+
+        <!-- Gallery Filter Buttons -->
+        <div class="d-flex justify-content-center gap-2 mb-4">
+          <button class="filter-btn active" data-gallery-filter="all">ALL</button>
+          <button class="filter-btn" data-gallery-filter="past">PAST</button>
+          <button class="filter-btn" data-gallery-filter="present">PRESENT</button>
+          <button class="filter-btn" data-gallery-filter="future">FUTURE</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="galleryGrid">
+        <!-- PAST 1: Old Telephone -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="past">
+          <div class="gallery-card" onclick="openStoryModal('past-phone')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=800&q=80" alt="Old Telephone" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-warning text-dark mb-1">PAST</span>
+              <h5 class="fw-bold text-white mb-1">Antique Rotary Telephone</h5>
+              <p class="text-secondary small mb-0">Rotary dials that connected households through switchboard operators.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST 2: Old Classroom -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="past">
+          <div class="gallery-card" onclick="openStoryModal('past-classroom')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" alt="Old Classroom" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-warning text-dark mb-1">PAST</span>
+              <h5 class="fw-bold text-white mb-1">Historical Classroom</h5>
+              <p class="text-secondary small mb-0">Wooden desks with built-in inkwells, slate chalkboards, and printed primers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST 3: Old Camera -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="past">
+          <div class="gallery-card" onclick="openStoryModal('past-camera')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="Old Camera" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-warning text-dark mb-1">PAST</span>
+              <h5 class="fw-bold text-white mb-1">Mechanical Film Camera</h5>
+              <p class="text-secondary small mb-0">Light-tight bellows and 35mm chemical negative rolls developed in darkrooms.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST 4: Old Transportation -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="past">
+          <div class="gallery-card" onclick="openStoryModal('past-transport')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80" alt="Steam Train" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-warning text-dark mb-1">PAST</span>
+              <h5 class="fw-bold text-white mb-1">Steam Locomotive Era</h5>
+              <p class="text-secondary small mb-0">Coal-fired iron boilers roaring across early transcontinental railroads.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST 5: Old Computer -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="past">
+          <div class="gallery-card" onclick="openStoryModal('past-computer')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Retro Computer" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-warning text-dark mb-1">PAST</span>
+              <h5 class="fw-bold text-white mb-1">Vintage CRT Microcomputer</h5>
+              <p class="text-secondary small mb-0">Phosphor monochrome screens, 5.25" floppy disks, and command-line prompts.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRESENT 1: Smartphone -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="present">
+          <div class="gallery-card" onclick="openStoryModal('present-phone')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Modern Smartphone" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-info text-dark mb-1">PRESENT</span>
+              <h5 class="fw-bold text-white mb-1">Bezel-less Smartphone</h5>
+              <p class="text-secondary small mb-0">Billion-transistor silicon chips running global communications in your pocket.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRESENT 2: Electric Vehicle -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="present">
+          <div class="gallery-card" onclick="openStoryModal('present-ev')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Electric Car" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-info text-dark mb-1">PRESENT</span>
+              <h5 class="fw-bold text-white mb-1">Electric Connected Car</h5>
+              <p class="text-secondary small mb-0">Lithium-battery drivetrains with over-the-air software updates.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRESENT 3: Modern Classroom -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="present">
+          <div class="gallery-card" onclick="openStoryModal('present-classroom')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Modern Classroom" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-info text-dark mb-1">PRESENT</span>
+              <h5 class="fw-bold text-white mb-1">Digital Smart Classroom</h5>
+              <p class="text-secondary small mb-0">Interactive smart touchscreens, cloud collaborative tabs, and AI assistance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRESENT 4: Modern City -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="present">
+          <div class="gallery-card" onclick="openStoryModal('present-city')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=800&q=80" alt="Modern Metropolis" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-info text-dark mb-1">PRESENT</span>
+              <h5 class="fw-bold text-white mb-1">Connected Megacity</h5>
+              <p class="text-secondary small mb-0">Fiber-optic networks, smart sensor transit grids, and skyline architecture.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRESENT 5: AI Technology -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="present">
+          <div class="gallery-card" onclick="openStoryModal('present-ai')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Artificial Intelligence" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge text-bg-info text-dark mb-1">PRESENT</span>
+              <h5 class="fw-bold text-white mb-1">Artificial Intelligence</h5>
+              <p class="text-secondary small mb-0">Deep transformer neural networks generating reasoning, imagery, and code.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUTURE 1: Futuristic City -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="future">
+          <div class="gallery-card" onclick="openStoryModal('future-city')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Futuristic City" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge bg-aqua text-dark mb-1">FUTURE</span>
+              <h5 class="fw-bold text-white mb-1">Bioluminescent Eco-Megacity</h5>
+              <p class="text-secondary small mb-0">Zero-emission vertical towers utilizing atmospheric moisture and solar glass.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUTURE 2: Robots -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="future">
+          <div class="gallery-card" onclick="openStoryModal('future-robot')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="Humanoid Robot" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge bg-aqua text-dark mb-1">FUTURE</span>
+              <h5 class="fw-bold text-white mb-1">Symbiotic Humanoid Androids</h5>
+              <p class="text-secondary small mb-0">Cognitive robotic companions handling elderly care, exploration, and fabrication.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUTURE 3: Future Transportation -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="future">
+          <div class="gallery-card" onclick="openStoryModal('future-transit')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80" alt="Future Transportation" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge bg-aqua text-dark mb-1">FUTURE</span>
+              <h5 class="fw-bold text-white mb-1">Autonomous Aerial Mobility</h5>
+              <p class="text-secondary small mb-0">Choreographed electric VTOL air-pods gliding along quiet designated sky corridors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUTURE 4: Space Exploration -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="future">
+          <div class="gallery-card" onclick="openStoryModal('future-space')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Space Exploration" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge bg-aqua text-dark mb-1">FUTURE</span>
+              <h5 class="fw-bold text-white mb-1">Deep Space Outposts</h5>
+              <p class="text-secondary small mb-0">Permanent rotating artificial-gravity space habitats and Martian bio-domes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUTURE 5: Future Healthcare -->
+        <div class="col-md-6 col-lg-4 gallery-item" data-era="future">
+          <div class="gallery-card" onclick="openStoryModal('future-health')">
+            <div class="gallery-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Future Healthcare" loading="lazy" />
+              <div class="gallery-overlay">
+                <span class="view-story-badge"><i class="fa-solid fa-eye"></i> View Story</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <span class="badge bg-aqua text-dark mb-1">FUTURE</span>
+              <h5 class="fw-bold text-white mb-1">Nanomedicine & Regeneration</h5>
+              <p class="text-secondary small mb-0">Cellular regenerative gene therapy and micro-robotic internal health monitoring.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       15. MY TIME CAPSULE (HIGH PRIORITY INTERACTIVE MODULE)
+       ======================================================================== -->
+  <section id="capsule" class="py-5" style="background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 70%);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-vault"></i> Interactive Vault
+        </div>
+        <h2 class="section-title text-gradient-aqua">Create Your Digital Time Capsule</h2>
+        <p class="fs-4 text-light fw-medium mb-2">“Write something today that your future self can discover tomorrow.”</p>
+        <p class="section-subtitle">
+          Fill in your reflections, aspirations, and predictions below. Upon sealing, your capsule will be cryo-locked into local vault storage with an active countdown timer.
+        </p>
+      </div>
+
+      <!-- Creation Form Box -->
+      <div id="capsuleFormContainer" class="capsule-form-container mx-auto" style="max-width: 900px;">
+        <form id="digitalTimeCapsuleForm">
+          <div class="row g-4">
+            
+            <!-- Field 1 & 2: Name & Capsule Title -->
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-user text-aqua"></i> Your Full Name</label>
+              <input type="text" class="form-control form-control-tc" id="tcName" placeholder="e.g. Alex Mercer" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-tag text-aqua"></i> Capsule Title</label>
+              <input type="text" class="form-control form-control-tc" id="tcTitle" placeholder="e.g. Letters to 2030 Alex" required />
+            </div>
+
+            <!-- Field 3 & 4: Current Date & Future Opening Date -->
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-calendar text-aqua"></i> Created Date</label>
+              <input type="date" class="form-control form-control-tc" id="tcCreatedDate" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-calendar-check text-aqua"></i> Future Opening Date</label>
+              <input type="date" class="form-control form-control-tc" id="tcOpeningDate" required />
+            </div>
+
+            <!-- Field 5: Message to My Future Self -->
+            <div class="col-12">
+              <label class="form-label-tc"><i class="fa-solid fa-envelope-open text-aqua"></i> Message to My Future Self</label>
+              <textarea class="form-control form-control-tc" id="tcMessage" rows="4" placeholder="Dear future me, right now I am sitting here thinking about what life will feel like..." required></textarea>
+            </div>
+
+            <!-- Field 6 & 7: Current Goals & Dreams -->
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-bullseye text-aqua"></i> My Current Goals</label>
+              <textarea class="form-control form-control-tc" id="tcGoals" rows="2" placeholder="What are you currently striving to complete or build?"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-star text-aqua"></i> My Dreams</label>
+              <textarea class="form-control form-control-tc" id="tcDreams" rows="2" placeholder="What is your biggest aspiration for the decades ahead?"></textarea>
+            </div>
+
+            <!-- Field 8 & 9: Favorite Things & Important Memory -->
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-heart text-aqua"></i> My Favorite Things</label>
+              <input type="text" class="form-control form-control-tc" id="tcFavorites" placeholder="Music, book, comfort food, favorite place today" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-camera-retro text-aqua"></i> Important Memory</label>
+              <input type="text" class="form-control form-control-tc" id="tcMemory" placeholder="A defining moment you never want to forget" />
+            </div>
+
+            <!-- Field 10: Future Prediction -->
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-crystal-ball text-aqua"></i> My Future Prediction</label>
+              <input type="text" class="form-control form-control-tc" id="tcPrediction" placeholder="What major event or change will occur before this opens?" />
+            </div>
+
+            <!-- Field 11: What Tech Will Look Like -->
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-laptop-code text-aqua"></i> What Technology Will Look Like</label>
+              <input type="text" class="form-control form-control-tc" id="tcTechVision" placeholder="What devices or interfaces will people use everyday?" />
+            </div>
+
+            <!-- Field 12: What I Want the World to Become -->
+            <div class="col-12">
+              <label class="form-label-tc"><i class="fa-solid fa-earth-americas text-aqua"></i> What I Want the World to Become</label>
+              <textarea class="form-control form-control-tc" id="tcWorldWish" rows="2" placeholder="Your hope for humanity, peace, nature, and community..."></textarea>
+            </div>
+
+          </div>
+
+          <div class="text-center mt-5">
+            <button type="submit" class="btn btn-aqua px-5 py-3 fs-5" id="sealCapsuleBtn">
+              <i class="fa-solid fa-lock me-2"></i> SEAL MY TIME CAPSULE
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sealed Capsule Vault View (Hidden until sealed) -->
+      <div id="sealedCapsuleDisplay" class="sealed-capsule-display mx-auto d-none mt-4" style="max-width: 850px;">
+        
+        <!-- Gyro Lock Animated Rings -->
+        <div class="gyro-lock-wrapper">
+          <div class="gyro-ring-1"></div>
+          <div class="gyro-ring-2"></div>
+          <div class="gyro-core">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+        </div>
+
+        <span class="badge bg-aqua text-dark fs-6 px-3 py-2 fw-bold mb-2">
+          <i class="fa-solid fa-lock"></i> Status: SEALED & ENCRYPTED
+        </span>
+
+        <h2 class="display-6 fw-bold text-white mb-2">“Your Time Capsule Has Been Sealed!”</h2>
+        <p class="text-aqua fw-semibold fs-5 mb-3" id="displayCapsuleTitle">Capsule Title</p>
+
+        <!-- Dates & Metadata -->
+        <div class="row g-3 justify-content-center mb-4 text-start">
+          <div class="col-sm-5 col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(4, 15, 26, 0.7); border: 1px solid var(--border-glass);">
+              <small class="text-secondary d-block">CREATED BY</small>
+              <strong class="text-white" id="displayCapsuleOwner">User</strong>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(4, 15, 26, 0.7); border: 1px solid var(--border-glass);">
+              <small class="text-secondary d-block">SEALED DATE</small>
+              <strong class="text-white" id="displayCreatedDate">—</strong>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4">
+            <div class="p-3 rounded-3" style="background: rgba(4, 15, 26, 0.7); border: 1px solid var(--border-glass);">
+              <small class="text-secondary d-block">OPENING DATE</small>
+              <strong class="text-aqua" id="displayOpeningDate">—</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-Time Countdown -->
+        <div class="mb-4">
+          <p class="text-secondary text-uppercase fw-bold text-xs tracking-widest mb-2">Chrono-Countdown To Unlock</p>
+          <div class="d-flex justify-content-center gap-2 gap-sm-3">
+            <div class="countdown-box">
+              <div class="countdown-num" id="cdDays">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cdHours">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cdMins">00</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-box">
+              <div class="countdown-num" id="cdSecs">00</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <button class="btn btn-aqua" onclick="printOrExportCapsule()">
+            <i class="fa-solid fa-certificate me-2"></i> Download / Print Vault Certificate
+          </button>
+          <button class="btn btn-aqua-outline" onclick="resetCapsuleForm()">
+            <i class="fa-solid fa-plus me-2"></i> Create Another Capsule
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       16. MESSAGE TO FUTURE SELF
+       ======================================================================== -->
+  <section id="future-message" class="py-5">
+    <div class="container" style="max-width: 850px;">
+      <div class="text-center mb-4">
+        <div class="section-badge">
+          <i class="fa-solid fa-envelope"></i> Epistolary Link
+        </div>
+        <h2 class="section-title text-white">Message to Future Self</h2>
+        <p class="section-subtitle">
+          Draft a spontaneous note, confession, or reminder that only future you will receive.
+        </p>
+      </div>
+
+      <div class="envelope-card">
+        <h4 class="fw-bold text-white mb-2"><i class="fa-solid fa-feather-pointed text-aqua me-2"></i>Dear Future Me...</h4>
+        <p class="text-secondary small mb-3">What do you hope you have accomplished? What feeling do you want to remind yourself of?</p>
+        
+        <textarea id="dearFutureMeText" class="form-control form-control-tc mb-3" rows="5" placeholder="Write a message that you want your future self to read. Talk about how you feel today, your favorite song right now, or what you hope you will never forget..."></textarea>
+        
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div class="text-xs text-muted">
+            <i class="fa-solid fa-shield-halved text-aqua me-1"></i> Saved locally with cryptographic timestamp
+          </div>
+          <button class="btn btn-aqua" id="saveFutureMsgBtn">
+            <i class="fa-solid fa-stamp me-2"></i> Save Message
+          </button>
+        </div>
+
+        <div id="envelopeSealSuccess" class="alert alert-success d-none mt-3 text-center border-aqua-glow" style="background: rgba(6, 44, 52, 0.9); color: var(--aqua-primary);">
+          <i class="fa-solid fa-envelope-circle-check fs-4 me-2 align-middle"></i>
+          <strong>Your letter has been sealed into the chrono-vault!</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       17. MEMORY CARDS (10 PROMPT CARDS)
+       ======================================================================== -->
+  <section id="memories" class="py-5" style="background: rgba(5, 14, 25, 0.7);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-bookmark"></i> Personal Milestones
+        </div>
+        <h2 class="section-title text-white">Preserve Your Memory Cards</h2>
+        <p class="section-subtitle">
+          Fill in these ten snapshot prompts about who you are right now in this exact moment in history.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-heart me-2"></i>1. My Favorite Memory</h6>
+            <p class="text-secondary small mb-2">A moment that brings a smile to your face.</p>
+            <input type="text" class="memory-input" id="mem1" placeholder="e.g. Stargazing by the lake last summer" />
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-rocket me-2"></i>2. My Biggest Dream</h6>
+            <p class="text-secondary small mb-2">What you hope your life becomes.</p>
+            <input type="text" class="memory-input" id="mem2" placeholder="e.g. Launching a sustainable tech venture" />
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-crosshairs me-2"></i>3. My Current Goal</h6>
+            <p class="text-secondary small mb-2">What you are striving for this month.</p>
+            <input type="text" class="memory-input" id="mem3" placeholder="e.g. Completing full-stack portfolio projects" />
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-music me-2"></i>4. My Favorite Song</h6>
+            <p class="text-secondary small mb-2">The track you have on endless repeat.</p>
+            <input type="text" class="memory-input" id="mem4" placeholder="e.g. Track name & artist" />
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-film me-2"></i>5. My Favorite Movie</h6>
+            <p class="text-secondary small mb-2">A film that moved or inspired you.</p>
+            <input type="text" class="memory-input" id="mem5" placeholder="e.g. Interstellar, Arrival" />
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-location-dot me-2"></i>6. My Favorite Place</h6>
+            <p class="text-secondary small mb-2">Where you feel most at home and peaceful.</p>
+            <input type="text" class="memory-input" id="mem6" placeholder="e.g. Quiet corner cafe in old town" />
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-user-group me-2"></i>7. My Best Friend</h6>
+            <p class="text-secondary small mb-2">The person who has stood by you.</p>
+            <input type="text" class="memory-input" id="mem7" placeholder="e.g. Best friend's name and nickname" />
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-trophy me-2"></i>8. My Biggest Achievement</h6>
+            <p class="text-secondary small mb-2">Something you conquered against the odds.</p>
+            <input type="text" class="memory-input" id="mem8" placeholder="e.g. Learning programming & shipping code" />
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-graduation-cap me-2"></i>9. What I Am Learning</h6>
+            <p class="text-secondary small mb-2">Skills or lessons life is teaching you.</p>
+            <input type="text" class="memory-input" id="mem9" placeholder="e.g. Web architecture, patience, design" />
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="memory-card">
+            <h6 class="fw-bold text-aqua mb-1"><i class="fa-solid fa-arrows-rotate me-2"></i>10. What I Want to Change</h6>
+            <p class="text-secondary small mb-2">A habit or perspective you want to improve.</p>
+            <input type="text" class="memory-input" id="mem10" placeholder="e.g. Overthinking less, trusting intuition" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-aqua-outline" id="saveMemoriesBtn">
+          <i class="fa-solid fa-floppy-disk me-2"></i> Save All Memory Cards
+        </button>
+        <div id="memoriesSavedAlert" class="text-aqua small fw-bold mt-2 d-none">
+          <i class="fa-solid fa-check"></i> Memory cards recorded into local memory vault!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       18. ABOUT THE PROJECT (WHY TIMECAPSULE?)
+       ======================================================================== -->
+  <section id="why-project" class="py-5">
+    <div class="container text-center">
+      <div class="section-badge">
+        <i class="fa-solid fa-seedling"></i> Project Philosophy
+      </div>
+      <h2 class="section-title text-white">Why TimeCapsule?</h2>
+      <p class="section-subtitle">
+        Every generation leaves behind inventions, memories and stories. TimeCapsule brings these together in one digital experience and encourages people to think about how today's decisions, technologies and memories become part of tomorrow's history.
+      </p>
+
+      <div class="row g-4 text-start">
+        <div class="col-md-4">
+          <div class="about-card text-center">
+            <div class="stat-icon mx-auto" style="color: #e5b887; background: rgba(212, 163, 115, 0.15); border-color: rgba(212, 163, 115, 0.35);">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <h4 class="fw-bold text-gradient-gold mb-2">History</h4>
+            <p class="text-secondary">Learn from the past.</p>
+            <small class="text-slate-300">
+              Understanding ancient breakthroughs instills deep gratitude and provides a map of how human resilience overcomes monumental bottlenecks.
+            </small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="about-card text-center">
+            <div class="stat-icon mx-auto" style="color: #38bdf8; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.35);">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h4 class="fw-bold text-info mb-2">Innovation</h4>
+            <p class="text-secondary">Understand today's development.</p>
+            <small class="text-slate-300">
+              By analyzing how contemporary tools impact daily lifestyle, we become conscious architects rather than passive consumers of technology.
+            </small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="about-card text-center">
+            <div class="stat-icon mx-auto">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h4 class="fw-bold text-aqua mb-2">Vision</h4>
+            <p class="text-secondary">Imagine possible futures.</p>
+            <small class="text-slate-300">
+              Envisioning future possibilities equips future engineers, creators, and leaders to steer technology toward human flourishing.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       19. CONTACT SECTION
+       ======================================================================== -->
+  <section id="contact" class="py-5" style="background: rgba(4, 11, 20, 0.85);">
+    <div class="container" style="max-width: 850px;">
+      <div class="text-center mb-5">
+        <div class="section-badge">
+          <i class="fa-solid fa-paper-plane"></i> Get In Touch
+        </div>
+        <h2 class="section-title text-white">Connect With TimeCapsule</h2>
+        <p class="section-subtitle">
+          Have an inquiry, feedback, or historic milestone you want featured in the archive? Reach out to our chrononauts.
+        </p>
+      </div>
+
+      <div class="capsule-form-container">
+        <form id="contactForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-user text-aqua"></i> Name</label>
+              <input type="text" class="form-control form-control-tc" id="contactName" placeholder="Your Name" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-tc"><i class="fa-solid fa-at text-aqua"></i> Email</label>
+              <input type="email" class="form-control form-control-tc" id="contactEmail" placeholder="your.email@example.com" required />
+            </div>
+            <div class="col-12">
+              <label class="form-label-tc"><i class="fa-solid fa-heading text-aqua"></i> Subject</label>
+              <input type="text" class="form-control form-control-tc" id="contactSubject" placeholder="Inquiry / Feedback / Collaboration" required />
+            </div>
+            <div class="col-12">
+              <label class="form-label-tc"><i class="fa-solid fa-message text-aqua"></i> Message</label>
+              <textarea class="form-control form-control-tc" id="contactMsg" rows="4" placeholder="Write your thoughts..." required></textarea>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-aqua px-5 py-3 fs-6">
+              <i class="fa-solid fa-paper-plane me-2"></i> Send Message
+            </button>
+          </div>
+        </form>
+
+        <div id="contactSuccessAlert" class="alert alert-success d-none mt-3 text-center border-aqua-glow" style="background: rgba(6, 44, 52, 0.9); color: var(--aqua-primary);">
+          <i class="fa-solid fa-check-circle fs-4 me-2 align-middle"></i>
+          <strong>Thank you! Your message has been sent to the TimeCapsule project team.</strong>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="text-center mt-4 pt-3 border-top border-secondary border-opacity-25">
+          <p class="text-secondary small mb-3">Follow TimeCapsule Across Cyberspace</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#contact" class="stat-icon mb-0" style="width: 44px; height: 44px; font-size: 1.1rem;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#contact" class="stat-icon mb-0" style="width: 44px; height: 44px; font-size: 1.1rem;"><i class="fa-brands fa-github"></i></a>
+            <a href="#contact" class="stat-icon mb-0" style="width: 44px; height: 44px; font-size: 1.1rem;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#contact" class="stat-icon mb-0" style="width: 44px; height: 44px; font-size: 1.1rem;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#contact" class="stat-icon mb-0" style="width: 44px; height: 44px; font-size: 1.1rem;"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       20. FOOTER
+       ======================================================================== -->
+  <footer class="py-5 border-top border-secondary border-opacity-25" style="background: #030811;">
+    <div class="container text-center">
+      <a class="navbar-brand justify-content-center mb-2" href="#home">
+        <span class="fs-4">⏳</span> <span class="text-aqua fw-bold">Time</span>Capsule
+      </a>
+      <p class="text-secondary fs-6 mb-4">
+        “Remember the Past. Understand the Present. Imagine the Future.”
+      </p>
+
+      <!-- Footer Quick Navigation -->
+      <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-4 small text-secondary">
+        <a href="#home" class="text-decoration-none text-light hover-aqua">Home</a>
+        <a href="#about" class="text-decoration-none text-light hover-aqua">About</a>
+        <a href="#past" class="text-decoration-none text-light hover-aqua">Past</a>
+        <a href="#present" class="text-decoration-none text-light hover-aqua">Present</a>
+        <a href="#developments" class="text-decoration-none text-light hover-aqua">Developments</a>
+        <a href="#comparison" class="text-decoration-none text-light hover-aqua">Compare</a>
+        <a href="#future" class="text-decoration-none text-light hover-aqua">Future</a>
+        <a href="#timeline" class="text-decoration-none text-light hover-aqua">Timeline</a>
+        <a href="#gallery" class="text-decoration-none text-light hover-aqua">Gallery</a>
+        <a href="#capsule" class="text-decoration-none text-aqua fw-bold">Time Capsule</a>
+        <a href="#contact" class="text-decoration-none text-light hover-aqua">Contact</a>
+      </div>
+
+      <p class="text-muted small mb-0">
+        © 2026 TimeCapsule. All Rights Reserved. Crafted for College Project & Portfolio Demonstration.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#home" class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- ========================================================================
+       MODALS: GALLERY STORY MODAL & PAST EXPLORER MODAL
+       ======================================================================== -->
+  <!-- Gallery Story Modal -->
+  <div class="modal fade" id="galleryStoryModal" tabindex="-1" aria-labelledby="galleryStoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-tc">
+        <div class="modal-header modal-header-tc d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-aqua text-dark fw-bold" id="modalEraBadge">ERA</span>
+            <h5 class="modal-title fw-bold text-white mb-0" id="galleryStoryModalLabel">Artifact Title</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="rounded-3 overflow-hidden mb-3" style="max-height: 380px;">
+            <img id="modalStoryImg" src="" alt="Story Visual" class="w-100 object-fit-cover" />
+          </div>
+          <h5 class="text-aqua fw-bold mb-2" id="modalStoryHeadline">Headline</h5>
+          <p class="text-slate-300 leading-relaxed mb-3" id="modalStoryDescription">Description</p>
+          <div class="p-3 rounded-3" style="background: rgba(0, 240, 255, 0.06); border: 1px solid var(--border-glass);">
+            <strong class="text-aqua small"><i class="fa-solid fa-lightbulb me-1"></i> Historical / Future Context:</strong>
+            <p class="text-secondary small mb-0 mt-1" id="modalStoryContext">Context note</p>
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-tc">
+          <button type="button" class="btn btn-aqua-outline" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explore Past Spotlight Modal -->
+  <div class="modal fade" id="pastExplorerModal" tabindex="-1" aria-labelledby="pastExplorerLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-tc" style="border-color: #d4a373;">
+        <div class="modal-header modal-header-tc d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge text-bg-warning text-dark fw-bold">ARCHIVE SPOTLIGHT</span>
+            <h5 class="modal-title fw-bold text-white mb-0" id="pastExplorerLabel">Life Before The Electric Grid</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-5">
+              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Old Books & Candle" class="img-fluid rounded-3 border border-secondary" />
+            </div>
+            <div class="col-md-7">
+              <h5 class="text-gradient-gold fw-bold">The Rhythm of Pre-Digital Life</h5>
+              <p class="text-slate-300 small">
+                Every communication was physical ink on parchment, requiring horses, sailing ships, or messengers. Evenings were lit by tallow lamps or fireplaces. News took weeks to cross oceans. Communities gathered in public squares to listen to oral proclamations or read solitary bulletin boards.
+              </p>
+              <ul class="text-secondary small mb-0 ps-3">
+                <li>Time was measured by church bell towers and sundials.</li>
+                <li>Letters often included pressed flowers and wax seal insignia.</li>
+                <li>Patience and craft were interwoven into every tool.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer modal-footer-tc">
+          <button type="button" class="btn btn-aqua" data-bs-dismiss="modal">Continue Journey</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>

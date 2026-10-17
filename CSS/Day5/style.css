@@ -1,0 +1,57 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    background-color: #f2f2f2;
+}
+a{
+    text-decoration: none;
+}
+h1 {
+    margin-bottom: 40px;
+}
+button {
+    padding: 12px 30px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login {
+    background-color: #01796f;
+}
+
+.register {
+    background-color: #007bff;
+}
+
+.contact {
+    background-color: #e91e63;
+}
+.login:hover {
+    background-color: white;
+    color: #01796f;
+    border: 2px solid #01796f;
+}
+.register:hover {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+.contact:hover {
+    background-color: white;
+    color: #e91e63;
+    border: 2px solid #e91e63;
+}

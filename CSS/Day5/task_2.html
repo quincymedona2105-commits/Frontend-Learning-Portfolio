@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-card {
+    width: 300px;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px gray;
+}
+.profile-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.profile-card img:hover {
+    transform: scale(1.1);
+    border: 3px solid #01796f;
+    opacity: 0.7;
+}
+.profile-card h2 {
+    margin: 15px 0 5px;
+    color: #01796f;
+}
+.profile-card p {
+    margin: 0;
+    color: #555;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+    <img src="./images/female.jpg" alt="Profile Image">
+    <h2>Quincy Medona</h2>
+    <p>Frontend Developer</p>
+</body>
+</html>

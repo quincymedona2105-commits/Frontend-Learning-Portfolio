@@ -1,0 +1,71 @@
+.box{
+width:500px;
+height:250px;
+padding:10px;
+border:solid 5px black;
+margin:20px;
+background-color:rgba(20, 192, 34, 0.86)
+}
+
+.box p {
+    color: rgb(237, 226, 214);
+    text-align: center;
+}
+
+.student {
+padding:100px;
+border:dotted 5px black;
+margin:20px;
+width:300px;
+background-color:cyan;
+}
+
+.Productone {
+padding:10px;
+border:solid black;
+margin:20px;
+width:500px;
+background-color:cyan;
+}
+
+.Producttwo {
+padding:10px;
+border:dotted 5px black;
+margin:20px;
+width:500px;
+background-color:rgba(112, 210, 81, 0.848);
+}
+
+.Productthree {
+padding:10px;
+border:dashed 5px black;
+margin:20px;
+width:500px;
+background-color:rgb(211, 223, 44);
+}
+
+.Product{
+padding:50px;
+}
+
+.margin {
+    width: 300px;
+
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+
+    border-top: 5px solid red;
+    border-right: 5px solid blue;
+    border-bottom: 5px solid green;
+    border-left: 5px solid purple;
+
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-bottom: 60px;
+    margin-left: 80px;
+
+    /* Background */
+    background-color: lightyellow;
+}
