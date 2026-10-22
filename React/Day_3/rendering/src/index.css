@@ -1,0 +1,26 @@
+
+*{
+  margin: 0%;
+  box-sizing: border-box;
+  padding: 0%;
+
+}
+
+.btn{
+  color: black;
+  border: none;
+  border-radius: 100px;
+  width: 10x;
+}
+.link{
+  background-color: blueviolet;
+  padding: 50px;
+  display: flex;
+  align-content: center;
+  justify-items:center;
+  gap: 10px;
+
+}
+
+
+
