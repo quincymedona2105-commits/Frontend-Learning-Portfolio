@@ -1,12 +1,18 @@
-import Home from "./Pages/Home"
 
-const App =()=>{
+import Sidebar from "./components/Sidebar"
+import DashboardHeader from "./components/DashboardHeader"
+// import WelcomeSection from "./components/WelcomeSection"
+import Footer from "./components/Footer"
 
-  return(<>
-
- <Home/>
-
-  </>)
-}
+const App = () => {
+  return (
+    <div>
+      <Sidebar />
+      <DashboardHeader />
+      {/* <WelcomeSection /> */}
+      <Footer />
+    </div>
+  );
+};
 
 export default App

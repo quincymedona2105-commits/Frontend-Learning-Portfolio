@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Practice · QUINCY.DEV Portfolio</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Shared Portfolio Design System -->
+  <link rel="stylesheet" href="../shared/portfolio.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="container" style="padding-bottom: 0;">
+    <nav class="header-nav">
+      <a href="../index.html" class="nav-brand">
+        <div class="logo-badge">Q</div>
+        <div class="logo-text">QUINCY<span>.DEV</span></div>
+      </a>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-back-link">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <span class="separator">/</span>
+      <span class="current">React</span>
+    </nav>
+
+    <!-- Tech Banner -->
+    <section class="hero-section" style="margin-bottom: 32px;">
+      <div class="hero-pill">
+        <i class="fa-brands fa-react"></i> React Practice Track
+      </div>
+      <h1 class="hero-title">
+        React <span class="gradient-text">Practice Portfolio</span>
+      </h1>
+      <p class="hero-desc">
+        Components, props, state, hooks, and interactive user interfaces.
+      </p>
+
+      <!-- Quick Metrics -->
+      <div class="stats-row">
+        <div class="stat-pill">
+          <i class="fa-solid fa-calendar-days" style="color: var(--mint-neon);"></i>
+          <span><strong>3</strong> Available Days</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-folder-tree" style="color: var(--mint-neon);"></i>
+          <span>Directory: <strong>React/</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Bar: Filter / Search -->
+    <div class="days-control-bar">
+      <div class="days-count-badge">
+        <i class="fa-solid fa-layer-group"></i>
+        <span id="filtered-count">3</span> of 3 Days Shown
+      </div>
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input 
+          type="text" 
+          id="day-search" 
+          class="search-input" 
+          placeholder="Filter days (e.g. Day_1, 2)..." 
+          autocomplete="off"
+        >
+      </div>
+    </div>
+
+    <!-- Day Cards Grid -->
+    <div class="days-grid" id="days-grid">
+      
+        <!-- Day_1 Card -->
+        <article class="day-card" data-title="day_1" data-folder="day_1">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_1</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_1
+          </h3>
+          
+          <div class="day-tasks-section" style="margin-top: 14px; margin-bottom: 14px; padding-top: 10px;">
+            <div class="task-pills-list">
+              <a href="Day_1/react_projects/firstapp/public/index.html" class="task-pill-link" title="Open react_projects/firstapp/public/index.html"><i class="fa-regular fa-file-code"></i> react_projects/firstapp/public/index</a>
+            <a href="Day_1/react_projects/myfirstapp/index.html" class="task-pill-link" title="Open react_projects/myfirstapp/index.html"><i class="fa-regular fa-file-code"></i> react_projects/myfirstapp/index</a>
+            </div>
+          </div>
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_1/react_projects/myfirstapp/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_2 Card -->
+        <article class="day-card" data-title="day_2" data-folder="day_2">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_2</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_2
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="../React/Day_2/firstapp/src" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_3 Card -->
+        <article class="day-card" data-title="day_3" data-folder="day_3">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_3</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_3
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_3/rendering/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+    </div>
+
+    <!-- Empty Filter State (Hidden by default) -->
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <i class="fa-regular fa-folder-open" style="font-size: 38px; color: var(--text-muted); margin-bottom: 12px; display: block;"></i>
+      <h3 style="font-size: 18px; color: var(--text-primary); margin-bottom: 6px;">No practice days found</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">Try searching with a different keyword or clear the search input.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-text">
+      <span>QUINCY.DEV</span> · FRONTEND PRACTICE PORTFOLIO
+    </p>
+  </footer>
+
+  <!-- Search & Filter Script -->
+  <script>
+    const searchInput = document.getElementById('day-search');
+    const dayCards = document.querySelectorAll('.day-card');
+    const filteredCount = document.getElementById('filtered-count');
+    const emptyState = document.getElementById('empty-state');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        dayCards.forEach(card => {
+          const title = card.getAttribute('data-title') || '';
+          const folder = card.getAttribute('data-folder') || '';
+
+          const matches = !query || 
+            title.includes(query) || 
+            folder.includes(query);
+
+          if (matches) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (filteredCount) filteredCount.textContent = visibleCount;
+        if (emptyState) emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      });
+    }
+  </script>
+
+  <!-- Shared Data Script -->
+  <script src="../shared/portfolio-data.js"></script>
+</body>
+</html>

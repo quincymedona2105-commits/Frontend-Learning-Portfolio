@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Practice · QUINCY.DEV Portfolio</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Shared Portfolio Design System -->
+  <link rel="stylesheet" href="../shared/portfolio.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="container" style="padding-bottom: 0;">
+    <nav class="header-nav">
+      <a href="../index.html" class="nav-brand">
+        <div class="logo-badge">Q</div>
+        <div class="logo-text">QUINCY<span>.DEV</span></div>
+      </a>
+      <div class="nav-right">
+        <a href="../index.html" class="nav-back-link">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <span class="separator">/</span>
+      <span class="current">JavaScript</span>
+    </nav>
+
+    <!-- Tech Banner -->
+    <section class="hero-section" style="margin-bottom: 32px;">
+      <div class="hero-pill">
+        <i class="fa-brands fa-js"></i> JavaScript Practice Track
+      </div>
+      <h1 class="hero-title">
+        JavaScript <span class="gradient-text">Practice Portfolio</span>
+      </h1>
+      <p class="hero-desc">
+        DOM manipulation, event handling, logic, functions, and web applications.
+      </p>
+
+      <!-- Quick Metrics -->
+      <div class="stats-row">
+        <div class="stat-pill">
+          <i class="fa-solid fa-calendar-days" style="color: var(--mint-neon);"></i>
+          <span><strong>21</strong> Available Days</span>
+        </div>
+        <div class="stat-pill">
+          <i class="fa-solid fa-folder-tree" style="color: var(--mint-neon);"></i>
+          <span>Directory: <strong>JS/</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Bar: Filter / Search -->
+    <div class="days-control-bar">
+      <div class="days-count-badge">
+        <i class="fa-solid fa-layer-group"></i>
+        <span id="filtered-count">21</span> of 21 Days Shown
+      </div>
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input 
+          type="text" 
+          id="day-search" 
+          class="search-input" 
+          placeholder="Filter days (e.g. Day_1, 2)..." 
+          autocomplete="off"
+        >
+      </div>
+    </div>
+
+    <!-- Day Cards Grid -->
+    <div class="days-grid" id="days-grid">
+      
+        <!-- Demo Card -->
+        <article class="day-card" data-title="demo" data-folder="demo">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Demo</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Demo
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Demo/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_1 Card -->
+        <article class="day-card" data-title="day_1" data-folder="day_1">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_1</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_1
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_1/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_2 Card -->
+        <article class="day-card" data-title="day_2" data-folder="day_2">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_2</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_2
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_2/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_3 Card -->
+        <article class="day-card" data-title="day_3" data-folder="day_3">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_3</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_3
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_3/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_4 Card -->
+        <article class="day-card" data-title="day_4" data-folder="day_4">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_4</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_4
+          </h3>
+          
+          <div class="day-tasks-section" style="margin-top: 14px; margin-bottom: 14px; padding-top: 10px;">
+            <div class="task-pills-list">
+              <a href="Day_4/index.html" class="task-pill-link" title="Open index.html"><i class="fa-regular fa-file-code"></i> index</a>
+            <a href="Day_4/index_2.html" class="task-pill-link" title="Open index_2.html"><i class="fa-regular fa-file-code"></i> index_2</a>
+            </div>
+          </div>
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_4/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_5 Card -->
+        <article class="day-card" data-title="day_5" data-folder="day_5">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_5</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_5
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_5/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_6 Card -->
+        <article class="day-card" data-title="day_6" data-folder="day_6">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_6</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_6
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_6/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_7 Card -->
+        <article class="day-card" data-title="day_7" data-folder="day_7">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_7</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_7
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_7/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_8 Card -->
+        <article class="day-card" data-title="day_8" data-folder="day_8">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_8</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_8
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_8/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_9 Card -->
+        <article class="day-card" data-title="day_9" data-folder="day_9">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_9</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_9
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_9/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_10 Card -->
+        <article class="day-card" data-title="day_10" data-folder="day_10">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_10</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_10
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_10/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_11 Card -->
+        <article class="day-card" data-title="day_11" data-folder="day_11">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_11</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_11
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_11/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_12 Card -->
+        <article class="day-card" data-title="day_12" data-folder="day_12">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_12</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_12
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_12/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_13 Card -->
+        <article class="day-card" data-title="day_13" data-folder="day_13">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_13</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_13
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_13/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_14 Card -->
+        <article class="day-card" data-title="day_14" data-folder="day_14">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_14</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_14
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_14/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_15 Card -->
+        <article class="day-card" data-title="day_15" data-folder="day_15">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_15</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_15
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_15/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_16 Card -->
+        <article class="day-card" data-title="day_16" data-folder="day_16">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_16</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_16
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_16/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_17 Card -->
+        <article class="day-card" data-title="day_17" data-folder="day_17">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_17</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_17
+          </h3>
+          
+          <div class="day-tasks-section" style="margin-top: 14px; margin-bottom: 14px; padding-top: 10px;">
+            <div class="task-pills-list">
+              <a href="Day_17/dashboard.html" class="task-pill-link" title="Open dashboard.html"><i class="fa-regular fa-file-code"></i> dashboard</a>
+            <a href="Day_17/login.html" class="task-pill-link" title="Open login.html"><i class="fa-regular fa-file-code"></i> login</a>
+            <a href="Day_17/register.html" class="task-pill-link" title="Open register.html"><i class="fa-regular fa-file-code"></i> register</a>
+            </div>
+          </div>
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_17/login.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_18 Card -->
+        <article class="day-card" data-title="day_18" data-folder="day_18">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_18</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_18
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_18/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_19 Card -->
+        <article class="day-card" data-title="day_19" data-folder="day_19">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_19</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_19
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_19/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Day_20 Card -->
+        <article class="day-card" data-title="day_20" data-folder="day_20">
+          <div class="day-card-header" style="margin-bottom: 8px;">
+            <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_20</span>
+          </div>
+          <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+            Day_20
+          </h3>
+          
+          <div style="margin-top: auto; padding-top: 8px;">
+            <a href="Day_20/index.html" class="open-task-btn" target="_self">
+              <span>Open Task</span>
+              <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+            </a>
+          </div>
+        </article>
+    </div>
+
+    <!-- Empty Filter State (Hidden by default) -->
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <i class="fa-regular fa-folder-open" style="font-size: 38px; color: var(--text-muted); margin-bottom: 12px; display: block;"></i>
+      <h3 style="font-size: 18px; color: var(--text-primary); margin-bottom: 6px;">No practice days found</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">Try searching with a different keyword or clear the search input.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-text">
+      <span>QUINCY.DEV</span> · FRONTEND PRACTICE PORTFOLIO
+    </p>
+  </footer>
+
+  <!-- Search & Filter Script -->
+  <script>
+    const searchInput = document.getElementById('day-search');
+    const dayCards = document.querySelectorAll('.day-card');
+    const filteredCount = document.getElementById('filtered-count');
+    const emptyState = document.getElementById('empty-state');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        dayCards.forEach(card => {
+          const title = card.getAttribute('data-title') || '';
+          const folder = card.getAttribute('data-folder') || '';
+
+          const matches = !query || 
+            title.includes(query) || 
+            folder.includes(query);
+
+          if (matches) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (filteredCount) filteredCount.textContent = visibleCount;
+        if (emptyState) emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      });
+    }
+  </script>
+
+  <!-- Shared Data Script -->
+  <script src="../shared/portfolio-data.js"></script>
+</body>
+</html>

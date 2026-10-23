@@ -1,26 +1,36 @@
 
-*{
-  margin: 0%;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  padding: 0%;
-
 }
 
-.btn{
-  color: black;
-  border: none;
-  border-radius: 100px;
-  width: 10x;
+body {
+  font-family: Arial, sans-serif;
 }
-.link{
-  background-color: blueviolet;
-  padding: 50px;
+
+.sidebar {
+  background-color: #172554;
+  color: white;
+  padding: 30px 20px;
   display: flex;
-  align-content: center;
-  justify-items:center;
+  justify-items: center;
+  align-items: center;
   gap: 10px;
 
+
 }
 
+.dashboard-header{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-
+.dashboard-footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color: white;
+  color: #64748b;
+  text-align: center;
+}
