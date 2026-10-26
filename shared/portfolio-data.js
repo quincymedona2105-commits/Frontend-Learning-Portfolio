@@ -680,8 +680,24 @@ const PORTFOLIO_DATA = {
         "entryFile": "firstapp/index.html",
         "files": [
           {
-            "name": "firstapp/index.html",
-            "label": "firstapp"
+            "name": "firstapp/src/Components/Header.jsx",
+            "label": "Header"
+          },
+          {
+            "name": "firstapp/src/Components/Content.jsx",
+            "label": "Content"
+          },
+          {
+            "name": "firstapp/src/Components/ProductCard.jsx",
+            "label": "ProductCard"
+          },
+          {
+            "name": "firstapp/src/Components/Student.jsx",
+            "label": "Student"
+          },
+          {
+            "name": "firstapp/src/Components/Footer.jsx",
+            "label": "Footer"
           }
         ]
       },
@@ -693,8 +709,20 @@ const PORTFOLIO_DATA = {
         "entryFile": "rendering/index.html",
         "files": [
           {
-            "name": "rendering/index.html",
-            "label": "Rendering"
+            "name": "rendering/src/components/DashboardHeader.jsx",
+            "label": "DashboardHeader"
+          },
+          {
+            "name": "rendering/src/components/Sidebar.jsx",
+            "label": "Sidebar"
+          },
+          {
+            "name": "rendering/src/components/WelcomeSection.jsx",
+            "label": "WelcomeSection"
+          },
+          {
+            "name": "rendering/src/components/Footer.jsx",
+            "label": "Footer"
           }
         ]
       }

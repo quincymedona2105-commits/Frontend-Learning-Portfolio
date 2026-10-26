@@ -22,9 +22,10 @@ function buildTechIndexHtml(techKey) {
     if (d.files && d.files.length > 1) {
       const pills = d.files.map(f => {
         const fileLink = `${d.folder}/${f.name}`;
-        // Clean short label (e.g. task_1.html -> task_1)
-        const cleanLabel = f.name.replace(/\.html$/i, '');
-        return `<a href="${fileLink}" class="task-pill-link" title="Open ${f.name}"><i class="fa-regular fa-file-code"></i> ${cleanLabel}</a>`;
+        // Clean short label
+        const cleanLabel = f.label || path.basename(f.name, path.extname(f.name));
+        const iconClass = f.name.endsWith('.jsx') ? 'fa-brands fa-react' : 'fa-regular fa-file-code';
+        return `<a href="${fileLink}" class="task-pill-link" title="Open ${f.name}"><i class="${iconClass}"></i> ${cleanLabel}</a>`;
       }).join('\n            ');
 
       multiTaskHtml = `
