@@ -725,6 +725,53 @@ const PORTFOLIO_DATA = {
             "label": "Footer"
           }
         ]
+      },
+      {
+        "day": 4,
+        "folder": "Day_4",
+        "title": "React Router & Navigation",
+        "description": "Multi-page client-side routing with React Router, navigation components, and page views.",
+        "entryFile": "reactrouterapp/index.html",
+        "files": [
+          { "name": "reactrouterapp/src/App.jsx", "label": "App" },
+          { "name": "reactrouterapp/src/components/Navbar.jsx", "label": "NavBar" },
+          { "name": "reactrouterapp/src/pages/Home.jsx", "label": "Home" },
+          { "name": "reactrouterapp/src/pages/About.jsx", "label": "About" },
+          { "name": "reactrouterapp/src/pages/Services.jsx", "label": "Services" },
+          { "name": "reactrouterapp/src/pages/Contact.jsx", "label": "Contact" }
+        ]
+      },
+      {
+        "day": 5,
+        "folder": "Day_5",
+        "title": "Conditional & Data Type Rendering",
+        "description": "String, number, boolean, and falsy conditional rendering techniques in React.",
+        "entryFile": "rendering/index.html",
+        "files": [
+          { "name": "rendering/src/App.jsx", "label": "App" },
+          { "name": "rendering/src/components/NavBar.jsx", "label": "NavBar" },
+          { "name": "rendering/src/components/Banner.jsx", "label": "Banner" },
+          { "name": "rendering/src/pages/Home.jsx", "label": "Home" },
+          { "name": "rendering/src/pages/StringRendering.jsx", "label": "StringRendering" },
+          { "name": "rendering/src/pages/NumberRendering.jsx", "label": "NumberRendering" },
+          { "name": "rendering/src/pages/BooleanRendering.jsx", "label": "BooleanRendering" },
+          { "name": "rendering/src/pages/Falsy.jsx", "label": "Falsy" }
+        ]
+      },
+      {
+        "day": 6,
+        "folder": "Day_6",
+        "title": "Stateful Components & Interactive Tasks",
+        "description": "Interactive state management, toggles, conditional rendering, and dynamic components.",
+        "entryFile": "rendering/index.html",
+        "files": [
+          { "name": "rendering/src/App.jsx", "label": "App" },
+          { "name": "rendering/src/main.jsx", "label": "Main" },
+          { "name": "rendering/src/Task1.jsx", "label": "Task_1" },
+          { "name": "rendering/src/Task2.jsx", "label": "Task_2" },
+          { "name": "rendering/src/Task3.jsx", "label": "Task_3" },
+          { "name": "rendering/src/Task4.jsx", "label": "Task_4" }
+        ]
       }
     ]
   }
