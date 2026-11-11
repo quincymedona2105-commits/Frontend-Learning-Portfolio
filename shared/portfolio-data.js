@@ -774,6 +774,27 @@ const PORTFOLIO_DATA = {
         ]
       }
     ]
+  },
+  "SQL": {
+    "id": "SQL",
+    "name": "SQL",
+    "fullName": "SQL & Relational Databases",
+    "folderName": "SQL",
+    "iconClass": "fa-solid fa-database",
+    "accentColor": "#0284c7",
+    "tagline": "Database design, DDL schemas, tables, constraints, queries, and data management.",
+    "days": [
+      {
+        "day": 1,
+        "folder": "Day_1",
+        "title": "DDL & Database Architecture",
+        "description": "Warehouse database schema, warehouse and product table definitions, primary keys, auto-increment, and unique constraints.",
+        "entryFile": "ddl.sql",
+        "files": [
+          { "name": "ddl.sql", "label": "ddl.sql" }
+        ]
+      }
+    ]
   }
 };
 

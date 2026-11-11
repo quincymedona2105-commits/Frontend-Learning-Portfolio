@@ -63,6 +63,15 @@ const TECH_DEFINITIONS = {
     iconClass: "fa-brands fa-react",
     accentColor: "#61dafb",
     tagline: "Components, props, state, hooks, and interactive user interfaces."
+  },
+  SQL: {
+    id: "SQL",
+    name: "SQL",
+    fullName: "SQL & Relational Databases",
+    folderName: "SQL",
+    iconClass: "fa-solid fa-database",
+    accentColor: "#0284c7",
+    tagline: "Database design, DDL schemas, tables, constraints, queries, and data management."
   }
 };
 
