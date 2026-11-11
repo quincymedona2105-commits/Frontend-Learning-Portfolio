@@ -675,9 +675,9 @@ const PORTFOLIO_DATA = {
       {
         "day": 2,
         "folder": "Day_2",
-        "title": "React Components & Vite App",
+        "title": "React Components & Modular Architecture",
         "description": "Functional components, JSX rendering hierarchy, modular style imports, and asset bundling.",
-        "entryFile": "firstapp/index.html",
+        "entryFile": "firstapp/src/Components/Header.jsx",
         "files": [
           {
             "name": "firstapp/src/Components/Header.jsx",
@@ -706,7 +706,7 @@ const PORTFOLIO_DATA = {
         "folder": "Day_3",
         "title": "Dynamic UI Rendering & Dashboard",
         "description": "Component rendering, props, stateful layouts, dashboard navigation, and modular UI structure.",
-        "entryFile": "rendering/index.html",
+        "entryFile": "rendering/src/components/DashboardHeader.jsx",
         "files": [
           {
             "name": "rendering/src/components/DashboardHeader.jsx",
@@ -731,14 +731,32 @@ const PORTFOLIO_DATA = {
         "folder": "Day_4",
         "title": "React Router & Navigation",
         "description": "Multi-page client-side routing with React Router, navigation components, and page views.",
-        "entryFile": "reactrouterapp/index.html",
+        "entryFile": "reactrouterapp/src/App.jsx",
         "files": [
-          { "name": "reactrouterapp/src/App.jsx", "label": "App" },
-          { "name": "reactrouterapp/src/components/Navbar.jsx", "label": "NavBar" },
-          { "name": "reactrouterapp/src/pages/Home.jsx", "label": "Home" },
-          { "name": "reactrouterapp/src/pages/About.jsx", "label": "About" },
-          { "name": "reactrouterapp/src/pages/Services.jsx", "label": "Services" },
-          { "name": "reactrouterapp/src/pages/Contact.jsx", "label": "Contact" }
+          {
+            "name": "reactrouterapp/src/App.jsx",
+            "label": "App"
+          },
+          {
+            "name": "reactrouterapp/src/components/Navbar.jsx",
+            "label": "Navbar"
+          },
+          {
+            "name": "reactrouterapp/src/pages/Home.jsx",
+            "label": "Home"
+          },
+          {
+            "name": "reactrouterapp/src/pages/About.jsx",
+            "label": "About"
+          },
+          {
+            "name": "reactrouterapp/src/pages/Services.jsx",
+            "label": "Services"
+          },
+          {
+            "name": "reactrouterapp/src/pages/Contact.jsx",
+            "label": "Contact"
+          }
         ]
       },
       {
@@ -746,16 +764,40 @@ const PORTFOLIO_DATA = {
         "folder": "Day_5",
         "title": "Conditional & Data Type Rendering",
         "description": "String, number, boolean, and falsy conditional rendering techniques in React.",
-        "entryFile": "rendering/index.html",
+        "entryFile": "rendering/src/App.jsx",
         "files": [
-          { "name": "rendering/src/App.jsx", "label": "App" },
-          { "name": "rendering/src/components/NavBar.jsx", "label": "NavBar" },
-          { "name": "rendering/src/components/Banner.jsx", "label": "Banner" },
-          { "name": "rendering/src/pages/Home.jsx", "label": "Home" },
-          { "name": "rendering/src/pages/StringRendering.jsx", "label": "StringRendering" },
-          { "name": "rendering/src/pages/NumberRendering.jsx", "label": "NumberRendering" },
-          { "name": "rendering/src/pages/BooleanRendering.jsx", "label": "BooleanRendering" },
-          { "name": "rendering/src/pages/Falsy.jsx", "label": "Falsy" }
+          {
+            "name": "rendering/src/App.jsx",
+            "label": "App"
+          },
+          {
+            "name": "rendering/src/components/NavBar.jsx",
+            "label": "NavBar"
+          },
+          {
+            "name": "rendering/src/components/Banner.jsx",
+            "label": "Banner"
+          },
+          {
+            "name": "rendering/src/pages/Home.jsx",
+            "label": "Home"
+          },
+          {
+            "name": "rendering/src/pages/StringRendering.jsx",
+            "label": "StringRendering"
+          },
+          {
+            "name": "rendering/src/pages/NumberRendering.jsx",
+            "label": "NumberRendering"
+          },
+          {
+            "name": "rendering/src/pages/BooleanRendering.jsx",
+            "label": "BooleanRendering"
+          },
+          {
+            "name": "rendering/src/pages/Falsy.jsx",
+            "label": "Falsy"
+          }
         ]
       },
       {
@@ -763,14 +805,162 @@ const PORTFOLIO_DATA = {
         "folder": "Day_6",
         "title": "Stateful Components & Interactive Tasks",
         "description": "Interactive state management, toggles, conditional rendering, and dynamic components.",
-        "entryFile": "rendering/index.html",
+        "entryFile": "rendering/src/App.jsx",
         "files": [
-          { "name": "rendering/src/App.jsx", "label": "App" },
-          { "name": "rendering/src/main.jsx", "label": "Main" },
-          { "name": "rendering/src/Task1.jsx", "label": "Task_1" },
-          { "name": "rendering/src/Task2.jsx", "label": "Task_2" },
-          { "name": "rendering/src/Task3.jsx", "label": "Task_3" },
-          { "name": "rendering/src/Task4.jsx", "label": "Task_4" }
+          {
+            "name": "rendering/src/App.jsx",
+            "label": "App"
+          },
+          {
+            "name": "rendering/src/main.jsx",
+            "label": "Main"
+          },
+          {
+            "name": "rendering/src/Task1.jsx",
+            "label": "Task_1"
+          },
+          {
+            "name": "rendering/src/Task2.jsx",
+            "label": "Task_2"
+          },
+          {
+            "name": "rendering/src/Task3.jsx",
+            "label": "Task_3"
+          },
+          {
+            "name": "rendering/src/Task4.jsx",
+            "label": "Task_4"
+          }
+        ]
+      },
+      {
+        "day": 7,
+        "folder": "Day_7",
+        "title": "Component Props & Data Passing",
+        "description": "Practical exercises and components built during Day_7 study.",
+        "entryFile": "rendering/src/App.jsx",
+        "files": [
+          {
+            "name": "rendering/src/App.jsx",
+            "label": "Task_1"
+          },
+          {
+            "name": "rendering/src/components/Employee.jsx",
+            "label": "Task_2"
+          },
+          {
+            "name": "rendering/src/components/Student.jsx",
+            "label": "Task_3"
+          }
+        ]
+      },
+      {
+        "day": 8,
+        "folder": "Day_8",
+        "title": "State Management & Event Handling",
+        "description": "Practical exercises and components built during Day_8 study.",
+        "entryFile": "newapp/src/App.jsx",
+        "files": [
+          {
+            "name": "newapp/src/App.jsx",
+            "label": "Task_1"
+          },
+          {
+            "name": "newapp/src/components/Task2.jsx",
+            "label": "Task_2"
+          },
+          {
+            "name": "newapp/src/components/Student.jsx",
+            "label": "Task_3"
+          }
+        ]
+      },
+      {
+        "day": 9,
+        "folder": "Day_9",
+        "title": "React Router Page Views & Navigation",
+        "description": "Practical exercises and components built during Day_9 study.",
+        "entryFile": "reactrouterapp/src/App.jsx",
+        "files": [
+          {
+            "name": "reactrouterapp/src/App.jsx",
+            "label": "Task_1"
+          },
+          {
+            "name": "reactrouterapp/src/components/Task2.jsx",
+            "label": "Task_2"
+          }
+        ]
+      },
+      {
+        "day": 10,
+        "folder": "Day_10",
+        "title": "API Data Fetching & useEffect Hook",
+        "description": "Practical exercises and components built during Day_10 study.",
+        "entryFile": "firstapp/src/App.jsx",
+        "files": [
+          {
+            "name": "firstapp/src/App.jsx",
+            "label": "App"
+          },
+          {
+            "name": "firstapp/src/components/Fetchuser.jsx",
+            "label": "Task_1"
+          }
+        ]
+      },
+      {
+        "day": 11,
+        "folder": "Day_11",
+        "title": "Authentication System & Dashboard",
+        "description": "Practical exercises and components built during Day_11 study.",
+        "entryFile": "auth/src/App.jsx",
+        "files": [
+          {
+            "name": "auth/src/App.jsx",
+            "label": "App"
+          },
+          {
+            "name": "auth/src/components/NavBar.jsx",
+            "label": "NavBar"
+          },
+          {
+            "name": "auth/src/pages/Dashboard.jsx",
+            "label": "Dashboard"
+          },
+          {
+            "name": "auth/src/pages/Login.jsx",
+            "label": "Login"
+          },
+          {
+            "name": "auth/src/pages/Register.jsx",
+            "label": "Register"
+          }
+        ]
+      },
+      {
+        "day": 12,
+        "folder": "Day_12",
+        "title": "Diwali Story Website",
+        "description": "Responsive full website with Tailwind CSS, Vite, and page routing.",
+        "entryFile": "website/src/App.jsx",
+        "files": [
+          {
+            "name": "website/src/App.jsx",
+            "label": "App"
+          },
+          {
+            "name": "website/src/components/NavBar.jsx",
+            "label": "NavBar"
+          },
+          {
+            "name": "website/src/pages/Home.jsx",
+            "label": "Home"
+          },
+          {
+            "name": "website/src/pages/About.jsx",
+            "label": "About"
+          }
         ]
       }
     ]
@@ -788,10 +978,31 @@ const PORTFOLIO_DATA = {
         "day": 1,
         "folder": "Day_1",
         "title": "DDL & Database Architecture",
-        "description": "Warehouse database schema, warehouse and product table definitions, primary keys, auto-increment, and unique constraints.",
-        "entryFile": "ddl.sql",
+        "description": "Database creation, table schemas, data types, primary keys, and column constraints.",
+        "entryFile": "Task_1.sql",
         "files": [
-          { "name": "ddl.sql", "label": "ddl.sql" }
+          { "name": "Task_1.sql", "label": "Task_1" },
+          { "name": "Task_2.sql", "label": "Task_2" },
+          { "name": "Task_3.sql", "label": "Task_3" },
+          { "name": "Task_4.sql", "label": "Task_4" }
+        ]
+      },
+      {
+        "day": 2,
+        "folder": "Day_2",
+        "title": "Table Alteration, Renaming & Queries",
+        "description": "Altering tables, adding columns, renaming tables, modifying schemas, and querying records.",
+        "entryFile": "Task_1.sql",
+        "files": [
+          { "name": "Task_1.sql", "label": "Task_1" },
+          { "name": "Task_2.sql", "label": "Task_2" },
+          { "name": "Task_3.sql", "label": "Task_3" },
+          { "name": "Task_4.sql", "label": "Task_4" },
+          { "name": "Task_5.sql", "label": "Task_5" },
+          { "name": "Task_6.sql", "label": "Task_6" },
+          { "name": "Task_7.sql", "label": "Task_7" },
+          { "name": "Task_8.sql", "label": "Task_8" },
+          { "name": "Task_9.sql", "label": "Task_9" }
         ]
       }
     ]

@@ -17,15 +17,21 @@ function buildTechIndexHtml(techKey) {
     // Relative link to primary task file from this tech folder
     const primaryLink = `${d.folder}/${d.entryFile}`;
 
-    // Multiple task pills if more than 1 file
+    // Task pills
     let multiTaskHtml = '';
-    if (d.files && d.files.length > 1) {
+    if (d.files && d.files.length >= 1) {
       const pills = d.files.map(f => {
-        const fileLink = `${d.folder}/${f.name}`;
-        // Clean short label
-        const cleanLabel = f.label || path.basename(f.name, path.extname(f.name));
-        const iconClass = f.name.endsWith('.jsx') ? 'fa-brands fa-react' : 'fa-regular fa-file-code';
-        return `<a href="${fileLink}" class="task-pill-link" title="Open ${f.name}"><i class="${iconClass}"></i> ${cleanLabel}</a>`;
+        let relativeFilePath = f.name;
+        if (relativeFilePath.startsWith(d.folder + '/') || relativeFilePath.startsWith(d.folder + '\\')) {
+          relativeFilePath = relativeFilePath.substring(d.folder.length + 1);
+        }
+        const fileLink = `${d.folder}/${relativeFilePath}`;
+        const cleanLabel = f.label || path.basename(relativeFilePath, path.extname(relativeFilePath));
+        const iconClass = f.name.endsWith('.jsx')
+          ? 'fa-brands fa-react'
+          : (f.name.endsWith('.sql') ? 'fa-solid fa-database' : 'fa-regular fa-file-code');
+
+        return `<a href="${fileLink}" class="task-pill-link" title="Open ${fileLink}"><i class="${iconClass}"></i> ${cleanLabel}</a>`;
       }).join('\n            ');
 
       multiTaskHtml = `
@@ -38,7 +44,7 @@ function buildTechIndexHtml(techKey) {
 
     return `
         <!-- ${cardTitle} Card -->
-        <article class="day-card" data-title="${cardTitle.toLowerCase()}" data-folder="${d.folder.toLowerCase()}">
+        <article class="day-card" data-title="${cardTitle.toLowerCase()} ${(d.title || '').toLowerCase()}" data-folder="${d.folder.toLowerCase()}">
           <div class="day-card-header" style="margin-bottom: 8px;">
             <span class="day-pill"><i class="fa-regular fa-folder"></i> ${cardTitle}</span>
           </div>
@@ -65,6 +71,7 @@ function buildTechIndexHtml(techKey) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Shared Portfolio Design System -->
   <link rel="stylesheet" href="../shared/portfolio.css">
+  
 </head>
 <body>
 
@@ -109,7 +116,7 @@ function buildTechIndexHtml(techKey) {
       <div class="stats-row">
         <div class="stat-pill">
           <i class="fa-solid fa-calendar-days" style="color: var(--mint-neon);"></i>
-          <span><strong>${daysCount}</strong> Available Days</span>
+          <span><strong>${daysCount}</strong> Available ${daysCount === 1 ? 'Day' : 'Days'}</span>
         </div>
         <div class="stat-pill">
           <i class="fa-solid fa-folder-tree" style="color: var(--mint-neon);"></i>
@@ -122,7 +129,7 @@ function buildTechIndexHtml(techKey) {
     <div class="days-control-bar">
       <div class="days-count-badge">
         <i class="fa-solid fa-layer-group"></i>
-        <span id="filtered-count">${daysCount}</span> of ${daysCount} Days Shown
+        <span id="filtered-count">${daysCount}</span> of ${daysCount} ${daysCount === 1 ? 'Day' : 'Days'} Shown
       </div>
       <div class="search-input-wrapper">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -152,7 +159,7 @@ function buildTechIndexHtml(techKey) {
   <!-- Footer -->
   <footer class="footer">
     <p class="footer-text">
-      <span>QUINCY.DEV</span> · FRONTEND PRACTICE PORTFOLIO
+      <span>QUINCY.DEV</span> · FRONTEND &amp; DATABASE PRACTICE PORTFOLIO
     </p>
   </footer>
 
@@ -197,12 +204,14 @@ function buildTechIndexHtml(techKey) {
 `;
 }
 
-// Generate index.html for each technology
-['HTML', 'CSS', 'BS', 'JS', 'React'].forEach(techKey => {
+// Generate index.html for each technology (HTML, CSS, BS, JS, React, SQL)
+const ALL_TECHS = ['HTML', 'CSS', 'BS', 'JS', 'React', 'SQL'];
+
+ALL_TECHS.forEach(techKey => {
   const targetPath = path.join(baseDir, techKey, 'index.html');
   const htmlContent = buildTechIndexHtml(techKey);
   fs.writeFileSync(targetPath, htmlContent, 'utf8');
   console.log(`Generated: ${targetPath}`);
 });
 
-console.log('All 5 technology index pages regenerated successfully with minimalist day cards!');
+console.log(`All ${ALL_TECHS.length} technology index pages regenerated successfully!`);

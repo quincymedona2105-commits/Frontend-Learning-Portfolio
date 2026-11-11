@@ -6,195 +6,8 @@
   <title>SQL Practice · QUINCY.DEV Portfolio</title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Prism.js Syntax Highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   <!-- Shared Portfolio Design System -->
   <link rel="stylesheet" href="../shared/portfolio.css">
-  <style>
-    /* Clickable task pills as buttons */
-    button.task-pill-link {
-      cursor: pointer;
-      font-family: inherit;
-      border: 1px solid var(--border-glass);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-secondary);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: var(--radius-sm);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition-fast);
-    }
-    button.task-pill-link:hover {
-      background: var(--mint-dim);
-      border-color: var(--mint-neon);
-      color: var(--mint-neon);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(56, 239, 125, 0.2);
-    }
-    button.task-pill-link i {
-      color: var(--mint-neon);
-      font-size: 11px;
-    }
-
-    /* Modal Overlay & Card for SQL Task Viewer */
-    .task-modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(2, 14, 12, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 100000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .task-modal-backdrop.open {
-      display: flex;
-      opacity: 1;
-    }
-
-    .task-modal-dialog {
-      background: #041815;
-      border: 1px solid rgba(56, 239, 125, 0.4);
-      border-radius: var(--radius-lg);
-      width: 100%;
-      max-width: 900px;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 239, 125, 0.2);
-      overflow: hidden;
-      transform: scale(0.95);
-      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .task-modal-backdrop.open .task-modal-dialog {
-      transform: scale(1);
-    }
-
-    .modal-header-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
-      background: rgba(7, 34, 29, 0.95);
-      border-bottom: 1px solid rgba(93, 242, 185, 0.2);
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .modal-title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .modal-day-pill {
-      font-size: 12px;
-      font-weight: 800;
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--mint-neon);
-      background: rgba(56, 239, 125, 0.15);
-      border: 1px solid rgba(56, 239, 125, 0.35);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-    }
-    .modal-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin: 0;
-    }
-
-    .modal-controls-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn-modal-action {
-      background: rgba(56, 239, 125, 0.12);
-      border: 1px solid rgba(56, 239, 125, 0.3);
-      color: var(--mint-neon);
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition-fast);
-      text-decoration: none;
-    }
-    .btn-modal-action:hover {
-      background: var(--mint-neon);
-      color: var(--bg-deep);
-    }
-    .modal-close-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--text-secondary);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      transition: var(--transition-fast);
-    }
-    .modal-close-btn:hover {
-      background: #ff5f56;
-      border-color: #ff5f56;
-      color: #fff;
-      transform: rotate(90deg);
-    }
-
-    .modal-body-scroll {
-      padding: 24px;
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    /* Code View inside Modal */
-    .modal-code-wrapper {
-      background: #020d0b;
-      border: 1px solid rgba(93, 242, 185, 0.2);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    }
-    .modal-code-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 18px;
-      background: #061916;
-      border-bottom: 1px solid rgba(93, 242, 185, 0.15);
-      font-size: 12px;
-      color: var(--text-muted);
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .modal-code-header span i {
-      color: var(--mint-neon);
-      margin-right: 6px;
-    }
-    pre[class*="language-"] {
-      margin: 0;
-      padding: 20px;
-      background: #020d0b !important;
-      font-size: 13.5px;
-      line-height: 1.6;
-      font-family: 'JetBrains Mono', Consolas, monospace;
-    }
-  </style>
 </head>
 <body>
 
@@ -232,22 +45,18 @@
         SQL <span class="gradient-text">Practice Portfolio</span>
       </h1>
       <p class="hero-desc">
-        Relational database schemas, DDL table definitions, and constraints. Click on the task to inspect the SQL code.
+        Database design, DDL schemas, tables, constraints, queries, and data management.
       </p>
 
       <!-- Quick Metrics -->
       <div class="stats-row">
         <div class="stat-pill">
           <i class="fa-solid fa-calendar-days" style="color: var(--mint-neon);"></i>
-          <span><strong>1</strong> Available Day</span>
+          <span><strong>2</strong> Available Days</span>
         </div>
         <div class="stat-pill">
           <i class="fa-solid fa-folder-tree" style="color: var(--mint-neon);"></i>
           <span>Directory: <strong>SQL/</strong></span>
-        </div>
-        <div class="stat-pill">
-          <i class="fa-solid fa-server" style="color: var(--mint-neon);"></i>
-          <span>Database: <strong>warehouse</strong></span>
         </div>
       </div>
     </section>
@@ -256,7 +65,7 @@
     <div class="days-control-bar">
       <div class="days-count-badge">
         <i class="fa-solid fa-layer-group"></i>
-        <span id="filtered-count">1</span> of 1 Day Shown
+        <span id="filtered-count">2</span> of 2 Days Shown
       </div>
       <div class="search-input-wrapper">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -264,7 +73,7 @@
           type="text" 
           id="day-search" 
           class="search-input" 
-          placeholder="Filter days (e.g. Day_1, ddl)..." 
+          placeholder="Filter days (e.g. Day_1, 2)..." 
           autocomplete="off"
         >
       </div>
@@ -274,7 +83,7 @@
     <div class="days-grid" id="days-grid">
       
       <!-- Day_1 Card -->
-      <article class="day-card" data-title="day_1 ddl warehouse product schema" data-folder="day_1">
+      <article class="day-card" data-title="day_1 ddl & database architecture" data-folder="day_1">
         <div class="day-card-header" style="margin-bottom: 8px;">
           <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_1</span>
         </div>
@@ -284,18 +93,50 @@
         
         <div class="day-tasks-section" style="margin-top: 14px; margin-bottom: 14px; padding-top: 10px;">
           <div class="task-pills-list">
-            <button type="button" class="task-pill-link" onclick="openTaskModal('day-1-ddl')" title="Click to view task">
-              <i class="fa-solid fa-file-code"></i> ddl.sql
-            </button>
+            <a href="Day_1/Task_1.sql" class="task-pill-link" title="Open Day_1/Task_1.sql"><i class="fa-solid fa-database"></i> Task_1</a>
+            <a href="Day_1/Task_2.sql" class="task-pill-link" title="Open Day_1/Task_2.sql"><i class="fa-solid fa-database"></i> Task_2</a>
+            <a href="Day_1/Task_3.sql" class="task-pill-link" title="Open Day_1/Task_3.sql"><i class="fa-solid fa-database"></i> Task_3</a>
+            <a href="Day_1/Task_4.sql" class="task-pill-link" title="Open Day_1/Task_4.sql"><i class="fa-solid fa-database"></i> Task_4</a>
           </div>
         </div>
 
-        <div style="margin-top: auto; padding-top: 8px;">
-          <button type="button" class="open-task-btn" onclick="openTaskModal('day-1-ddl')">
-            <span>View Task</span>
-            <i class="fa-solid fa-code btn-arrow"></i>
-          </button>
+        <!-- <div style="margin-top: auto; padding-top: 8px;">
+          <a href="Day_1/Task_1.sql" class="open-task-btn" target="_self">
+            <span>Open Task</span>
+            <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+          </a>
+        </div> -->
+      </article>
+
+      <!-- Day_2 Card -->
+      <article class="day-card" data-title="day_2 alter rename table queries" data-folder="day_2">
+        <div class="day-card-header" style="margin-bottom: 8px;">
+          <span class="day-pill"><i class="fa-regular fa-folder"></i> Day_2</span>
         </div>
+        <h3 class="day-title" style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 12px;">
+          Day_2
+        </h3>
+        
+        <div class="day-tasks-section" style="margin-top: 14px; margin-bottom: 14px; padding-top: 10px;">
+          <div class="task-pills-list">
+            <a href="Day_2/Task_1.sql" class="task-pill-link" title="Open Day_2/Task_1.sql"><i class="fa-solid fa-database"></i> Task_1</a>
+            <a href="Day_2/Task_2.sql" class="task-pill-link" title="Open Day_2/Task_2.sql"><i class="fa-solid fa-database"></i> Task_2</a>
+            <a href="Day_2/Task_3.sql" class="task-pill-link" title="Open Day_2/Task_3.sql"><i class="fa-solid fa-database"></i> Task_3</a>
+            <a href="Day_2/Task_4.sql" class="task-pill-link" title="Open Day_2/Task_4.sql"><i class="fa-solid fa-database"></i> Task_4</a>
+            <a href="Day_2/Task_5.sql" class="task-pill-link" title="Open Day_2/Task_5.sql"><i class="fa-solid fa-database"></i> Task_5</a>
+            <a href="Day_2/Task_6.sql" class="task-pill-link" title="Open Day_2/Task_6.sql"><i class="fa-solid fa-database"></i> Task_6</a>
+            <a href="Day_2/Task_7.sql" class="task-pill-link" title="Open Day_2/Task_7.sql"><i class="fa-solid fa-database"></i> Task_7</a>
+            <a href="Day_2/Task_8.sql" class="task-pill-link" title="Open Day_2/Task_8.sql"><i class="fa-solid fa-database"></i> Task_8</a>
+            <a href="Day_2/Task_9.sql" class="task-pill-link" title="Open Day_2/Task_9.sql"><i class="fa-solid fa-database"></i> Task_9</a>
+          </div>
+        </div>
+<!-- 
+        <div style="margin-top: auto; padding-top: 8px;">
+          <a href="Day_2/Task_1.sql" class="open-task-btn" target="_self">
+            <span>Open Task</span>
+            <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+          </a>
+        </div> -->
       </article>
 
     </div>
@@ -315,142 +156,8 @@
     </p>
   </footer>
 
-  <!-- ========================================================================
-       SQL TASK MODAL (Displays task code directly with syntax highlighting)
-       ======================================================================== -->
-  <div class="task-modal-backdrop" id="task-modal" onclick="onBackdropClick(event)">
-    <div class="task-modal-dialog" role="dialog" aria-modal="true">
-      
-      <!-- Modal Header -->
-      <div class="modal-header-bar">
-        <div class="modal-title-wrap">
-          <span class="modal-day-pill" id="m-day-tag">Day 1</span>
-          <h2 class="modal-title" id="m-task-title">ddl.sql</h2>
-        </div>
-
-        <div class="modal-controls-right">
-          <button type="button" class="btn-modal-action" id="modal-copy-btn" onclick="copyModalCode()">
-            <i class="fa-regular fa-copy"></i> Copy SQL
-          </button>
-          <a href="Day_1/ddl.sql" download="ddl.sql" id="modal-download-link" class="btn-modal-action">
-            <i class="fa-solid fa-download"></i> Download .sql
-          </a>
-          <button type="button" class="modal-close-btn" onclick="closeTaskModal()" title="Close (Esc)">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Modal Body: SQL Task Code -->
-      <div class="modal-body-scroll">
-        <div class="modal-code-wrapper">
-          <div class="modal-code-header">
-            <span id="m-code-filepath"><i class="fa-solid fa-file-code"></i> SQL/Day_1/ddl.sql</span>
-            <span>SQL DDL</span>
-          </div>
-          <pre><code class="language-sql" id="m-code-snippet"></code></pre>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+  <!-- Search & Filter Script -->
   <script>
-    // Task Data Store (Shows task code directly)
-    const SQL_TASKS = {
-      'day-1-ddl': {
-        day: 'Day 1',
-        title: 'ddl.sql · Database Schema Definition',
-        file: 'Day_1/ddl.sql',
-        path: 'SQL/Day_1/ddl.sql',
-        code: `create database warehouse;
-
-use warehouse;
-
-create table warehouse (
-    id int primary key auto_increment,
-    warehouse_name varchar(30) not null,
-    warehouse_number varchar(30) unique not null,
-    warehouse_location varchar(100) not null,
-    warehouse_price decimal(10,2) not null default 0.00,
-    warehouse_area_number varchar(30) not null,
-    warehouse_active boolean not null default true,
-    warehouse_created_date date not null default (current_date),
-    warehouse_created_at timestamp default current_timestamp
-);
-
-create table product(
-    product_id int primary key auto_increment,
-    product_name varchar(100) not null,
-    product_quantity int not null default 0,
-    product_price decimal(10,2) not null default 0.00,
-    product_category varchar(50) not null,
-    product_barcode varchar(50) unique not null,
-    product_adddate date not null default (current_date),
-    isActive boolean default true
-);`
-      }
-    };
-
-    // Modal Control Functions
-    const modalEl = document.getElementById('task-modal');
-    const dayTagEl = document.getElementById('m-day-tag');
-    const taskTitleEl = document.getElementById('m-task-title');
-    const codeSnippetEl = document.getElementById('m-code-snippet');
-    const codeFilepathEl = document.getElementById('m-code-filepath');
-    const downloadLinkEl = document.getElementById('modal-download-link');
-    const copyBtnEl = document.getElementById('modal-copy-btn');
-
-    function openTaskModal(taskKey) {
-      const data = SQL_TASKS[taskKey];
-      if (!data) return;
-
-      dayTagEl.textContent = data.day;
-      taskTitleEl.textContent = data.title;
-      codeSnippetEl.textContent = data.code;
-      codeFilepathEl.innerHTML = `<i class="fa-solid fa-file-code"></i> ${data.path}`;
-      downloadLinkEl.setAttribute('href', data.file);
-      downloadLinkEl.setAttribute('download', data.file.split('/').pop());
-
-      // Syntax highlight
-      if (window.Prism) {
-        Prism.highlightElement(codeSnippetEl);
-      }
-
-      modalEl.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeTaskModal() {
-      modalEl.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function onBackdropClick(e) {
-      if (e.target === modalEl) {
-        closeTaskModal();
-      }
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modalEl.classList.contains('open')) {
-        closeTaskModal();
-      }
-    });
-
-    function copyModalCode() {
-      const code = codeSnippetEl.textContent;
-      navigator.clipboard.writeText(code).then(() => {
-        copyBtnEl.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-        setTimeout(() => {
-          copyBtnEl.innerHTML = '<i class="fa-regular fa-copy"></i> Copy SQL';
-        }, 2000);
-      });
-    }
-
-    // Search filter across days
     const searchInput = document.getElementById('day-search');
     const dayCards = document.querySelectorAll('.day-card');
     const filteredCount = document.getElementById('filtered-count');
@@ -465,7 +172,9 @@ create table product(
           const title = card.getAttribute('data-title') || '';
           const folder = card.getAttribute('data-folder') || '';
 
-          const matches = !query || title.includes(query) || folder.includes(query);
+          const matches = !query || 
+            title.includes(query) || 
+            folder.includes(query);
 
           if (matches) {
             card.style.display = 'flex';
@@ -480,5 +189,8 @@ create table product(
       });
     }
   </script>
+
+  <!-- Shared Data Script -->
+  <script src="../shared/portfolio-data.js"></script>
 </body>
 </html>

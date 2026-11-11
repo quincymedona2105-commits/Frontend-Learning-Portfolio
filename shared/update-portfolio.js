@@ -90,23 +90,33 @@ function getFileMetadata(filePath) {
   }
 }
 
-// Helper: Recursively find HTML files inside a directory (excluding node_modules / .git)
-function findHtmlFiles(dirPath, relativePrefix = '') {
+// Helper: Recursively find relevant files inside a directory (excluding node_modules / .git / dist / build)
+function findFilesForTech(dirPath, techKey, relativePrefix = '') {
   let results = [];
+  if (!fs.existsSync(dirPath)) return results;
   const items = fs.readdirSync(dirPath, { withFileTypes: true });
   for (const item of items) {
-    if (item.name === 'node_modules' || item.name === '.git') continue;
+    if (item.name === 'node_modules' || item.name === '.git' || item.name === '.vite' || item.name === 'dist') continue;
     const itemPath = path.join(dirPath, item.name);
     const rel = relativePrefix ? `${relativePrefix}/${item.name}` : item.name;
+
     if (item.isDirectory()) {
-      results = results.concat(findHtmlFiles(itemPath, rel));
-    } else if (item.name.endsWith('.html') || item.name.endsWith('.htm')) {
-      const meta = getFileMetadata(itemPath);
-      results.push({
-        name: rel,
-        label: meta.heading || meta.title || item.name,
-        metaTitle: meta.title
-      });
+      results = results.concat(findFilesForTech(itemPath, techKey, rel));
+    } else {
+      if (techKey === 'SQL' && item.name.endsWith('.sql')) {
+        results.push({
+          name: rel,
+          label: item.name,
+          metaTitle: item.name
+        });
+      } else if (item.name.endsWith('.html') || item.name.endsWith('.htm')) {
+        const meta = getFileMetadata(itemPath);
+        results.push({
+          name: rel,
+          label: meta.heading || meta.title || item.name,
+          metaTitle: meta.title
+        });
+      }
     }
   }
   return results;
@@ -156,39 +166,48 @@ Object.keys(TECH_DEFINITIONS).forEach(techKey => {
   dirItems.forEach(dirItem => {
     const folderName = dirItem.name;
     const subDirPath = path.join(techDir, folderName);
-    const htmlFiles = findHtmlFiles(subDirPath);
+    const scannedFiles = findFilesForTech(subDirPath, techKey);
 
     // Extract day number or use folder name
     const matchNum = folderName.match(/\d+/);
     const dayValue = matchNum ? parseInt(matchNum[0], 10) : folderName;
 
-    // Determine primary entry file
-    let entryFile = '';
-    const fileNames = htmlFiles.map(f => f.name);
-
-    if (fileNames.includes('index.html')) entryFile = 'index.html';
-    else if (fileNames.includes('inedx.html')) entryFile = 'inedx.html';
-    else if (fileNames.includes('task.html')) entryFile = 'task.html';
-    else if (fileNames.includes('task_1.html')) entryFile = 'task_1.html';
-    else if (fileNames.includes('Website/index.html')) entryFile = 'Website/index.html';
-    else if (fileNames.length > 0) entryFile = fileNames[0];
-
-    // Check if existing data already had a rich title and description
-    let customTitle = '';
-    let customDesc = '';
+    // Check if existing data already had rich info
+    let existingDay = null;
     if (existingData[techKey] && existingData[techKey].days) {
-      const existingDay = existingData[techKey].days.find(d => d.folder === folderName);
-      if (existingDay) {
-        customTitle = existingDay.title;
-        customDesc = existingDay.description;
-        if (existingDay.entryFile && fileNames.includes(existingDay.entryFile)) {
-          entryFile = existingDay.entryFile;
-        }
+      existingDay = existingData[techKey].days.find(d => d.folder === folderName);
+    }
+
+    // Determine final files list: if existingDay had detailed files and scannedFiles has fewer or only root index, preserve existing
+    let finalFiles = scannedFiles.map(f => ({ name: f.name, label: f.label }));
+    if (existingDay && existingDay.files && existingDay.files.length > 0) {
+      if (finalFiles.length === 0 || (techKey === 'React' && existingDay.files.length > finalFiles.length)) {
+        finalFiles = existingDay.files;
       }
     }
 
-    const title = customTitle || (htmlFiles[0] ? htmlFiles[0].label : `Day ${dayValue} Practice`);
-    const description = customDesc || `Practical exercises and components built during ${folderName} study.`;
+    // Determine primary entry file
+    let entryFile = '';
+    const fileNames = finalFiles.map(f => f.name);
+
+    if (existingDay && existingDay.entryFile) {
+      entryFile = existingDay.entryFile;
+    } else if (fileNames.includes('index.html')) {
+      entryFile = 'index.html';
+    } else if (fileNames.includes('inedx.html')) {
+      entryFile = 'inedx.html';
+    } else if (fileNames.includes('task.html')) {
+      entryFile = 'task.html';
+    } else if (fileNames.includes('task_1.html')) {
+      entryFile = 'task_1.html';
+    } else if (fileNames.includes('ddl.sql')) {
+      entryFile = 'ddl.sql';
+    } else if (fileNames.length > 0) {
+      entryFile = fileNames[0];
+    }
+
+    const title = (existingDay && existingDay.title) || (finalFiles[0] ? finalFiles[0].label : `Day ${dayValue} Practice`);
+    const description = (existingDay && existingDay.description) || `Practical exercises and components built during ${folderName} study.`;
 
     updatedPortfolio[techKey].days.push({
       day: dayValue,
@@ -196,7 +215,7 @@ Object.keys(TECH_DEFINITIONS).forEach(techKey => {
       title,
       description,
       entryFile,
-      files: htmlFiles.map(f => ({ name: f.name, label: f.label }))
+      files: finalFiles
     });
   });
 });
